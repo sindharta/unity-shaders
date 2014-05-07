@@ -1,5 +1,5 @@
 ﻿
-Shader "sindharta/Basic/SimpleDiffuse" {
+Shader "sin/Basic/SimpleDiffuse" {
 	Properties 
 	{
 		_DiffuseTexture ("Diffuse Texture", 2D) = "white" {}
@@ -22,6 +22,7 @@ Shader "sindharta/Basic/SimpleDiffuse" {
 			#pragma vertex SimpleDiffuseVS
 			#pragma fragment SimpleDiffusePS
 			#pragma multi_compile_fwdbase
+			#define UNITY_PASS_FORWARDBASE
 
 			#include "SimpleDiffuse.cginc"
 
@@ -41,13 +42,12 @@ Shader "sindharta/Basic/SimpleDiffuse" {
 			#pragma vertex SimpleDiffuseVS
 			#pragma fragment SimpleDiffusePS
 			#pragma multi_compile_fwdadd
+			#define UNITY_PASS_FORWARDADD
 
 			#include "SimpleDiffuse.cginc"
 
 			ENDCG
 		}		
-
-
 	} 
 	FallBack "Diffuse"
 }
