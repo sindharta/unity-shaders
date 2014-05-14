@@ -9,15 +9,15 @@ Shader "sin/Basic/SimpleDiffuse" {
 	SubShader 
 	{
 		Tags { "RenderType"="Opaque" }
-		pass
-		{		
+		pass {		
 			Tags { "LightMode"="ForwardBase"}
 			cull back
 
 			CGPROGRAM
 
 			#pragma target 3.0
-			#pragma fragmentoption ARB_precision_hint_fastest
+			#pragma fragmentoption ARB_precision_hint_fastest           
+            #pragma only_renderers d3d9 opengl gles
 
 			#pragma vertex SimpleDiffuseVS
 			#pragma fragment SimpleDiffusePS
@@ -29,8 +29,7 @@ Shader "sin/Basic/SimpleDiffuse" {
 			ENDCG
 		}		
 
-		pass
-		{		
+		pass {		
 			Tags { "LightMode"="ForwardAdd"}
 			Blend One One
 			cull back
@@ -38,6 +37,7 @@ Shader "sin/Basic/SimpleDiffuse" {
 
 			#pragma target 3.0
 			#pragma fragmentoption ARB_precision_hint_fastest
+            #pragma only_renderers d3d9 opengl gles
 
 			#pragma vertex SimpleDiffuseVS
 			#pragma fragment SimpleDiffusePS

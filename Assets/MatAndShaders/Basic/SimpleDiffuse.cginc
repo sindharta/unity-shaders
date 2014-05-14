@@ -10,10 +10,6 @@ float4 _DiffuseTint;
 float4 _LightColor0;
 
 //----------------------------------------------------------------------------------------------------------------------
-#define GAMMA 2.2
-#define INV_GAMMA 0.45
-
-//----------------------------------------------------------------------------------------------------------------------
 
 struct PS_IN
 {
@@ -59,13 +55,14 @@ float4 SimpleDiffusePS(PS_IN input) : COLOR
 	half3 l = normalize(input.wsLightDir);
 	half3 n = normalize(input.wsNormal);	 
 
-	//attenuation
+    //calculation
 	const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;     
 	const float n_dot_l = saturate(dot(n, l));	
 	const float3 diffuse_term = n_dot_l * _LightColor0.rgb * _DiffuseTint.rgb * attenuation;
 	const float4 diffuse_tex = tex2D(_DiffuseTexture, input.uv);
 	const float3 albedo = pow(diffuse_tex.rgb,GAMMA);
 
+    //final
 	float4 final_color;    
 	final_color.rgb = pow( diffuse_term * albedo,INV_GAMMA);
     final_color.a = diffuse_tex.a;
