@@ -1,3 +1,5 @@
+//Perform lighting in linear space. Unity setting should be set to gamma setting 
+
 #ifndef SIN_BASIC_SIMPLE_DIFFUSE
 #define SIN_BASIC_SIMPLE_DIFFUSE
 
@@ -56,21 +58,22 @@ float4 SimpleDiffusePS(PS_IN input) : COLOR
 	half3 n = normalize(input.wsNormal);	 
 
     //calculation
-	const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;     
+	const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;
 	const float n_dot_l = saturate(dot(n, l));	
 	const float3 diffuse_term = n_dot_l * _LightColor0.rgb * _DiffuseTint.rgb * attenuation;
 	const float4 diffuse_tex = tex2D(_DiffuseTexture, input.uv);
 	const float3 albedo = pow(diffuse_tex.rgb,GAMMA);
 
     //final
-	float4 final_color;    
+	float4 final_color;
 	final_color.rgb = pow( diffuse_term * albedo,INV_GAMMA);
+//    final_color.rgb = diffuse_term * albedo;
     final_color.a = diffuse_tex.a;
     
 #ifdef UNITY_PASS_FORWARDBASE
     final_color.rgb += input.ambientColor.rgb;
 #endif
-    
+
 	return final_color;
 }
 
