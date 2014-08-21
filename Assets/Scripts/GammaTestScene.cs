@@ -23,7 +23,7 @@ which confirms that UnityDiffuse performs the lighting in the gamma space,
 
 using UnityEngine;
 
-public class GammaTest : MonoBehaviour {
+public class GammaTestScene : MonoBehaviour {
     void Awake() {
         Debug.Log ("You may want to check the comments on GammaTest.cs too");
     }
