@@ -25,7 +25,7 @@ Shader "sin/Basic/SimpleTexture" {
 
             #include "UnityCG.cginc"
             #include "AutoLight.cginc"
-            #include "Assets/MatAndShaders/SinForwardLight.cginc"
+            #include "Assets/Shaders/SinForwardLight.cginc"
 
 
             sampler2D _MainTexture;

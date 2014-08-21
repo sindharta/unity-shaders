@@ -5,7 +5,7 @@
 
 #include "UnityCG.cginc"
 #include "AutoLight.cginc"
-#include "Assets/MatAndShaders/SinForwardLight.cginc"
+#include "Assets/Shaders/SinForwardLight.cginc"
 
 sampler2D _DiffuseTexture;
 float4 _DiffuseTint;
