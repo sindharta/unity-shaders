@@ -26,7 +26,7 @@
 
             #include "UnityCG.cginc"
             #include "AutoLight.cginc"
-            #include "Assets/MatAndShaders/SinForwardLight.cginc"
+            #include "Assets/Shaders/SinForwardLight.cginc"
 
             float4 _FirstColor;
             float4 _SecondColor;
