@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SimpleDiffuseNormalMap
-  m_Shader: {fileID: 4800000, guid: 44b4ce0fdea31cd48b71826f8ad85cb0, type: 3}
+  m_Name: MiscNormalMapMat
+  m_Shader: {fileID: 4800000, guid: 8c3970a146d2c904c9589372e73c5e9a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -22,14 +22,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DiffuseTexture
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _NormalTexture
+          name: _NormalMap
         second:
           m_Texture: {fileID: 2800000, guid: b209e5466c82df645ba8342410434b77, type: 3}
           m_Scale: {x: 1, y: 1}

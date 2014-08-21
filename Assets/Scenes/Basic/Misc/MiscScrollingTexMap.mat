@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ConstantColor
-  m_Shader: {fileID: 4800000, guid: 36f2b4b6087164c6f9820a60655e2b35, type: 3}
+  m_Name: MiscScrollingTexMap
+  m_Shader: {fileID: 4800000, guid: 573ace675440a7041ba962397808931a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,30 +17,31 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DiffuseTexture
-        second:
-          m_Texture: {fileID: 2800000, guid: df9100d619e6bcc4880053de665346f1, type: 3}
+          m_Texture: {fileID: 2800000, guid: a85c4c9b0d7470f408bc949d9fde24da, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _MainTexture
         second:
-          m_Texture: {fileID: 2800000, guid: e73a9ca79588b4d28aa0202a6e7d4cf1, type: 3}
+          m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _XScrollSpeed
+        second: 1
+      data:
+        first:
+          name: _YScrollSpeed
+        second: 1
+      data:
+        first:
+          name: _Tint
+        second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .501960814, g: .501960814, b: .501960814, a: 1}
-      data:
-        first:
-          name: _DiffuseTint
         second: {r: 1, g: 1, b: 1, a: 1}

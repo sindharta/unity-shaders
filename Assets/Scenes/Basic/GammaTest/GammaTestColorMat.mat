@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PhongSpecular
-  m_Shader: {fileID: 4800000, guid: afc62de65f92c534e9519169b1c11e8b, type: 3}
+  m_Name: GammaTestColorMat
+  m_Shader: {fileID: 4800000, guid: 36f2b4b6087164c6f9820a60655e2b35, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,24 +24,23 @@ Material:
         first:
           name: _DiffuseTexture
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: df9100d619e6bcc4880053de665346f1, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats:
       data:
         first:
-          name: _SpecularPower
-        second: 10
+          name: _MainTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: e73a9ca79588b4d28aa0202a6e7d4cf1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .501960814, g: .501960814, b: .501960814, a: 1}
       data:
         first:
           name: _DiffuseTint
-        second: {r: 1, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _SpecularTint
         second: {r: 1, g: 1, b: 1, a: 1}
