@@ -12,3 +12,6 @@
 /*.pidb
 /*.booproj
 Build/**
+
+# UnityVS
+Assets/Plugins/UnityVS/Editor/UnityVS.VersionSpecific.*
