@@ -1,3 +1,4 @@
+//Will output the color as it is without going back to the gamma space
 #ifndef SIN_BASIC_NORMAL_MAP
 #define SIN_BASIC_NORMAL_MAP
 
@@ -6,7 +7,6 @@
 #include "Assets/Shaders/SinForwardLight.cginc"
 
 sampler2D _NormalMap;
-float4 _DiffuseTint;
 float4 _LightColor0;
 
 
@@ -57,27 +57,20 @@ PS_IN NormalMapVS(appdata_tan v)
 
 float4 NormalMapPS(PS_IN input) : COLOR
 {
+    //prepare
     const half3 l = normalize(input.wsLightDir);
-
-    //construct the tbn matrix
-	const half3 v_normal = normalize(input.wsNormal);
+	const half3 n = normalize(input.wsNormal);
     const half3 t = normalize(input.wsTangent);
-    const half3 b = cross(t,v_normal);
-    const half3x3 tbn = half3x3(t,b,v_normal);
 
-    //Calculate the perturbed normal in world space
-    const float4 ts_normal = (tex2D(_NormalMap, float2(input.uv.x, input.uv.y)) * 2.0) - 1.0;
-    const half3 n = mul(tbn,ts_normal.xyz);
-
+    const half3 ws_normal_map = CalculateNormalMap(_NormalMap, input.uv, t,n);
 
     //calculation
 	const float attenuation = LIGHT_ATTENUATION(input) * 2;
-	const float n_dot_l = saturate(dot(n, l));
-	const float3 diffuse_term = n_dot_l * _LightColor0.rgb * _DiffuseTint.rgb * attenuation;
+	const float n_dot_l = saturate(dot(ws_normal_map, l));
+	const float3 lighting_result = n_dot_l * _LightColor0.rgb * attenuation;
 
     //final
-	float4 final_color = float4(0,0,0,1);
-	final_color = float4(diffuse_term.rgb,1);
+	float4 final_color = float4(lighting_result,1);
 
 #ifdef UNITY_PASS_FORWARDBASE
     final_color.rgb += input.ambientColor.rgb;
