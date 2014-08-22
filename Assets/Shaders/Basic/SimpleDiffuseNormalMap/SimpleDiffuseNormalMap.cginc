@@ -61,12 +61,17 @@ float4 PS(PS_IN input) : COLOR
     
     
     //Build TBN matrix
-    const half3 b = cross(t, n);
+    const half3 b = cross(n, t);
     const float3x3 tbn = float3x3(t, b, n) ;
     
     //normal map
-    float3 ts_normal_map = tex2D(_NormalTexture,input.uv * float2(1,-1)) * 2.0 - 1.0;        
-    const float3 ws_normal_map = mul(tbn,ts_normal_map);   
+    float3 ts_normal_map = tex2D(_NormalTexture,input.uv * float2(1,-1)) * 2.0 - 1.0;
+    //ts_normal_map.z *= 1;
+    const float3 ws_normal_map = mul(tbn,ts_normal_map);
+
+    //test
+//    return float4(ws_normal_map * 0.5 + 0.5,1);
+
 
     //calculation
     const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;     

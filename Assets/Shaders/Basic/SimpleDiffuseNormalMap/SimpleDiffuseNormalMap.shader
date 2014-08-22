@@ -11,7 +11,7 @@
         Tags { "RenderType"="Opaque" }
         pass {      
             Tags { "LightMode"="ForwardBase"}
-            cull off
+//            cull on
 
             CGPROGRAM
 
@@ -32,7 +32,6 @@
         pass {      
             Tags { "LightMode"="ForwardAdd"}
             Blend One One
-            cull off
             CGPROGRAM
 
             #pragma target 3.0

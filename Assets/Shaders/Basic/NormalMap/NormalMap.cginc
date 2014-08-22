@@ -66,7 +66,10 @@ float4 NormalMapPS(PS_IN input) : COLOR
     const half3x3 tbn = half3x3(t,b,v_normal);
 
     //Calculate the perturbed normal in world space
-    const float4 ts_normal = (tex2D(_NormalMap, float2(input.uv.x, input.uv.y)) * 2.0) - 1.0;
+    const float4 ts_normal = ((tex2D(_NormalMap, float2(input.uv.x, input.uv.y)) * 2.0) - 1.0) * float4(0,0,0,1);
+
+    return float4 (ts_normal);
+
     const half3 n = mul(tbn,ts_normal.xyz);
 
 
