@@ -59,19 +59,7 @@ float4 PS(PS_IN input) : COLOR
     const half3 n = normalize(input.wsNormal);     
     const half3 t = normalize(input.wsTangent);     
     
-    
-    //Build TBN matrix
-    const half3 b = cross(n, t);
-    const float3x3 tbn = float3x3(t, b, n) ;
-    
-    //normal map
-    float3 ts_normal_map = tex2D(_NormalTexture,input.uv * float2(1,-1)) * 2.0 - 1.0;
-    //ts_normal_map.z *= 1;
-    const float3 ws_normal_map = mul(tbn,ts_normal_map);
-
-    //test
-//    return float4(ws_normal_map * 0.5 + 0.5,1);
-
+    const half3 ws_normal_map = CalculateNormalMap(_NormalTexture, input.uv, t,n);
 
     //calculation
     const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;     
@@ -82,13 +70,14 @@ float4 PS(PS_IN input) : COLOR
 
     //final
     float4 final_color;    
-    final_color.rgb = pow( diffuse_term * albedo,INV_GAMMA);
+    final_color.rgb = diffuse_term * albedo;
     final_color.a = diffuse_tex.a;
     
 #ifdef UNITY_PASS_FORWARDBASE
     final_color.rgb += input.ambientColor.rgb;
 #endif
-  
+    final_color.rgb = pow( final_color.rgb,INV_GAMMA);
+
     return final_color;
 }
 

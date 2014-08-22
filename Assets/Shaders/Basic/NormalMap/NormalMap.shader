@@ -3,7 +3,6 @@ Shader "sin/Basic/NormalMap" {
 	Properties 
 	{
 		_NormalMap ("NormalMap", 2D) = "blue" {}
-		_DiffuseTint ( "Diffuse Tint", Color) = (1, 1, 1, 1)
 	}
 
 	SubShader 
