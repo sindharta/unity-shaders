@@ -11,7 +11,10 @@
 /*.userprefs
 /*.pidb
 /*.booproj
+Assets/*.pidb
+Assets/*.pidb.meta
 Build/**
 
 # UnityVS
 Assets/Plugins/UnityVS/Editor/UnityVS.VersionSpecific.*
+*.DotSettings
