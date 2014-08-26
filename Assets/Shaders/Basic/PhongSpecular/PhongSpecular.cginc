@@ -23,10 +23,7 @@ struct PS_IN {
 	half3 wsViewDir : TEXCOORD2;
 	float2 uv : TEXCOORD3;
 	LIGHTING_COORDS(4, 5)
-
-#ifdef UNITY_PASS_FORWARDBASE
-    half3 ambientColor : TEXCOORD6; //for non per-pixel lights
-#endif
+    SIN_SH_LIGHT_COORD(6)
 };
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -42,13 +39,8 @@ PS_IN PhongSpecularVS(appdata_base v) {
 	o.wsNormal  = mul(float3x3(_Object2World), v.normal.xyz);
 	o.wsViewDir = normalize(_WorldSpaceCameraPos.xyz - ws_pos.xyz);
 
-//vertex lighting for additional lights
-#ifdef UNITY_PASS_FORWARDBASE
-    //(UNITY_LIGHTMODEL_AMBIENT.rgb * 2) already included in SH ?
-    o.ambientColor = ShadeSH9 (half4(o.wsNormal.xyz,1.0));
-#endif
-
 	TRANSFER_VERTEX_TO_FRAGMENT(o);
+    SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,o.wsNormal);
 
 	return o;
 }
@@ -77,9 +69,7 @@ float4 PhongSpecularPS(PS_IN input) : COLOR {
 	final_color.rgb = diffuse_term * albedo + spec_term * _SpecularTint;
     final_color.a = diffuse_tex.a;
 
-#ifdef UNITY_PASS_FORWARDBASE
-    final_color.rgb += input.ambientColor.rgb;
-#endif
+    SIN_SH_LIGHT(final_color,input);
 
 	//back to gamma space
 	final_color.rgb = pow( final_color.rgb,INV_GAMMA);

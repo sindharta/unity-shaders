@@ -4,6 +4,7 @@
 #include "UnityCG.cginc"
 #include "AutoLight.cginc"
 #include "Assets/Shaders/SinForwardLight.cginc"
+#include "Assets/Shaders/SinShaderUtility.cginc"
 
 sampler2D _DiffuseTexture;
 sampler2D _NormalTexture;
@@ -19,11 +20,9 @@ struct PS_IN
     half3 wsNormal : TEXCOORD1;
     half3 wsTangent : TEXCOORD2;
     float2 uv : TEXCOORD3;
-    SIN_LIGHTING_COORDS(4, 5)
-    
-#ifdef UNITY_PASS_FORWARDBASE 
-    half3 ambientColor : TEXCOORD6; //for non per-pixel lights
-#endif
+    LIGHTING_COORDS(4, 5)
+    SIN_SH_LIGHT_COORD(6)
+
 };
 
 
@@ -38,15 +37,8 @@ PS_IN VS(appdata_tan v)
     o.wsNormal = mul(float3x3(_Object2World), v.normal.xyz);
     o.wsTangent = mul(float3x3(_Object2World), v.tangent.xyz);
 
-    //vertex lighting for additional lights
-    const float4 ws_pos = mul(_Object2World, v.vertex);   
-
-#ifdef UNITY_PASS_FORWARDBASE
-    //(UNITY_LIGHTMODEL_AMBIENT.rgb * 2) already included in SH ?
-    o.ambientColor = ShadeSH9 (half4(o.wsNormal.xyz,1.0));
-#endif
-
-    SIN_TRANSFER_VERTEX_TO_FRAGMENT(o);
+    TRANSFER_VERTEX_TO_FRAGMENT(o);
+    SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,o.wsNormal);
 
     return o; 
 }
@@ -62,7 +54,7 @@ float4 PS(PS_IN input) : COLOR
     const half3 ws_normal_map = CalculateNormalMap(_NormalTexture, input.uv, t,n);
 
     //calculation
-    const float attenuation = SIN_LIGHT_ATTENUATION(input) * 2;     
+    const float attenuation = LIGHT_ATTENUATION(input) * 2;     
     const float n_dot_l = saturate(dot(ws_normal_map, l));  
     const float3 diffuse_term = n_dot_l * _LightColor0.rgb * _DiffuseTint.rgb * attenuation;
     const float4 diffuse_tex = tex2D(_DiffuseTexture, input.uv);
@@ -72,10 +64,8 @@ float4 PS(PS_IN input) : COLOR
     float4 final_color;    
     final_color.rgb = diffuse_term * albedo;
     final_color.a = diffuse_tex.a;
-    
-#ifdef UNITY_PASS_FORWARDBASE
-    final_color.rgb += input.ambientColor.rgb;
-#endif
+    SIN_SH_LIGHT(final_color,input);
+
     final_color.rgb = pow( final_color.rgb,INV_GAMMA);
 
     return final_color;
