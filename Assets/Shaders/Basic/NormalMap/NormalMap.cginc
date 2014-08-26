@@ -5,6 +5,7 @@
 #include "UnityCG.cginc"
 #include "AutoLight.cginc"
 #include "Assets/Shaders/SinForwardLight.cginc"
+#include "Assets/Shaders/SinShaderUtility.cginc"
 
 sampler2D _NormalMap;
 float4 _LightColor0;
@@ -20,10 +21,7 @@ struct PS_IN
     half3 wsTangent : TEXCOORD2;
 	float2 uv : TEXCOORD3;
 	LIGHTING_COORDS(4, 5)
-    
-#ifdef UNITY_PASS_FORWARDBASE 
-    half3 ambientColor : TEXCOORD5; //for non per-pixel lights
-#endif
+    SIN_SH_LIGHT_COORD(6)
 };
 
 
@@ -43,12 +41,8 @@ PS_IN NormalMapVS(appdata_tan v)
     //vertex lighting for additional lights
     const float4 ws_pos = mul(_Object2World, v.vertex);   
 
-#ifdef UNITY_PASS_FORWARDBASE
-    //(UNITY_LIGHTMODEL_AMBIENT.rgb * 2) already included in SH ?
-    o.ambientColor = ShadeSH9 (half4(o.wsNormal.xyz,1.0));
-#endif
-
 	TRANSFER_VERTEX_TO_FRAGMENT(o);
+    SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,o.wsNormal);
 
 	return o; 
 }
@@ -71,10 +65,7 @@ float4 NormalMapPS(PS_IN input) : COLOR
 
     //final
 	float4 final_color = float4(lighting_result,1);
-
-#ifdef UNITY_PASS_FORWARDBASE
-    final_color.rgb += input.ambientColor.rgb;
-#endif
+    SIN_SH_LIGHT(final_color,input);
 
 	return final_color;
 }
