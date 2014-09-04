@@ -38,11 +38,11 @@ Material:
       data:
         first:
           name: _FresnelCoef
-        second: 1
+        second: .949999988
       data:
         first:
           name: _Roughness
-        second: .5
+        second: .899999976
     m_Colors:
       data:
         first:

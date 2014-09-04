@@ -73,7 +73,7 @@ float4 CookTorrancePS(PS_IN input) : COLOR
     //Cook Torrance specular model (http://en.wikipedia.org/wiki/Specular_highlight#Cook.E2.80.93Torrance_model)
 
     //Distribution of having microfacets that do pure specular reflection
-    float D = pow( 2.0 * tex2D(_SpecularDistribution,float2(n_dot_h,_Roughness)), 10.0 );  ;
+    float D = 2.0 * pow( tex2D(_SpecularDistribution,float2(n_dot_h,_Roughness)), 10.0 );  ;
 
     //Geometric attenuation
     const float G_const = 2 * n_dot_h / v_dot_h;

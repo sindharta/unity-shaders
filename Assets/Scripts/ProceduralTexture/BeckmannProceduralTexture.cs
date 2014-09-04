@@ -49,7 +49,7 @@ public class BeckmannProceduralTexture : MonoBehaviour {
                 float c = Beckmann(n_dot_h, roughness);
                 
                 // Scale the value to fit within [0,1] – invert upon lookup.  
-                c = 0.5f * Mathf.Pow( c, 0.1f );  
+                c = Mathf.Pow( 0.5f * c, 0.1f );  
                                 
                 Color color = new Color(c,c,c,1.0f);
                 tex.SetPixel( (int)i,(int)j,color);                
