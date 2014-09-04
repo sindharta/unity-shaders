@@ -27,11 +27,22 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecularDistribution
+        second:
+          m_Texture: {fileID: 2800000, guid: b25f1d630c2764e91a962bfbde0c8bb7, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _FresnelCoef
         second: 1
+      data:
+        first:
+          name: _Roughness
+        second: .5
     m_Colors:
       data:
         first:
