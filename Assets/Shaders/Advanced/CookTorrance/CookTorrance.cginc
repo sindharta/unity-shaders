@@ -84,10 +84,11 @@ float4 CookTorrancePS(PS_IN input) : COLOR
     //Fresnel
     const float F = SchlickFresnel(_FresnelCoef, v_dot_h);
 
-    const float specular_term = D * G * F / (4.0 * n_dot_v * n_dot_l);
+    const float cook_torrance = (D * G * F) / (4.0 * n_dot_v * n_dot_l);
+    const float3 specular_term = cook_torrance * _LightColor0.rgb * _SpecularTint.rgb;
 
     //final
-	float4 final_color = float4(diffuse_term.rgb * albedo + specular_term * _SpecularTint.rgb,diffuse_tex.a);
+	float4 final_color = float4(diffuse_term.rgb * albedo + specular_term,diffuse_tex.a);
     SIN_SH_LIGHT(final_color,input);
 
     final_color.rgb = pow( final_color.rgb,INV_GAMMA);
