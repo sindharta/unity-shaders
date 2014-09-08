@@ -5,7 +5,6 @@ Shader "sin/Advanced/CookTorrance" {
 		_DiffuseTexture ("Diffuse Texture", 2D) = "white" {}
 		_DiffuseTint  ( "Diffuse Tint", Color) = (1, 1, 1, 1)
         _SpecularTint ( "Specular Tint", Color) = (1, 1, 1, 1)
-		_SpecularDistribution ("Specular Distribution", 2D) = "black" {}
         _FresnelCoef  ( "Fresnel Coef", Float) = 0.1
         _Roughness    ( "Roughness", Float) = 0.5
 	}

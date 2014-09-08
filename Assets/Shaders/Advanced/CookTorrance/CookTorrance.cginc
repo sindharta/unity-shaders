@@ -9,7 +9,6 @@
 #include "Assets/Shaders/SinShaderUtility.cginc"
 
 sampler2D _DiffuseTexture;
-sampler2D _SpecularDistribution;
 float4 _DiffuseTint;
 float4 _LightColor0;
 float4 _SpecularTint;
@@ -51,6 +50,17 @@ PS_IN CookTorranceVS(appdata_base v)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
+//GPU Version of Beckmann 
+float Beckmann(float nDotH, float roughness) {
+    const float nDotH_2 = nDotH * nDotH;
+    const float roughness_2 = roughness * roughness;
+    const float exp_value = (1.0 - nDotH_2) / (roughness_2 * nDotH_2);     
+    const float val = exp(-exp_value) / (PI * roughness_2 * nDotH_2 * nDotH_2);
+    return val;
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------
 
 float4 CookTorrancePS(PS_IN input) : COLOR
 {					
@@ -73,8 +83,8 @@ float4 CookTorrancePS(PS_IN input) : COLOR
     //Cook Torrance specular model (http://en.wikipedia.org/wiki/Specular_highlight#Cook.E2.80.93Torrance_model)
 
     //Distribution of having microfacets that do pure specular reflection
-    float D = 2.0 * pow( tex2D(_SpecularDistribution,float2(n_dot_h,_Roughness)), 10.0 );  ;
-
+    float D = Beckmann(n_dot_h,_Roughness);
+   
     //Geometric attenuation
     const float G_const = 2 * n_dot_h / v_dot_h;
     const float G1 = G_const * n_dot_v;
