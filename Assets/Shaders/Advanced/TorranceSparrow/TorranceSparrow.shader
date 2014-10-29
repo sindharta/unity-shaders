@@ -1,5 +1,5 @@
 ﻿
-Shader "sin/Advanced/CookTorrance" {
+Shader "sin/Advanced/TorranceSparrow" {
 	Properties 
 	{
 		_DiffuseTexture ("Diffuse Texture", 2D) = "white" {}
@@ -29,7 +29,7 @@ Shader "sin/Advanced/CookTorrance" {
 			#pragma multi_compile_fwdbase
 			#define UNITY_PASS_FORWARDBASE
 
-			#include "CookTorrance.cginc"
+			#include "TorranceSparrow.cginc"
 
 			ENDCG
 		}		
@@ -49,7 +49,7 @@ Shader "sin/Advanced/CookTorrance" {
 			#pragma multi_compile_fwdadd
 			#define UNITY_PASS_FORWARDADD
 
-			#include "CookTorrance.cginc"
+			#include "TorranceSparrow.cginc"
 
 			ENDCG
 		}		
