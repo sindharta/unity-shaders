@@ -51,12 +51,38 @@ PS_IN CookTorranceVS(appdata_base v)
 
 //----------------------------------------------------------------------------------------------------------------------
 //GPU Version of Beckmann 
-float Beckmann(float nDotH, float roughness) {
+float Beckmann(const float nDotH, const float roughness) {
     const float nDotH_2 = nDotH * nDotH;
     const float roughness_2 = roughness * roughness;
     const float exp_value = (1.0 - nDotH_2) / (roughness_2 * nDotH_2);     
     const float val = exp(-exp_value) / (PI * roughness_2 * nDotH_2 * nDotH_2);
     return val;
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
+// Taken from http://mmikkelsen3d.blogspot.jp/2013/03/the-jbit.html
+// This is the Torrance-Sparrow visibility factor: G / (n . v)
+float GeometricAttenuation(const float nDotL, const float nDotV, const float vDotH, const float nDotH) {   
+    // vDotH should never be zero
+    const float denom = max( vDotH, FLT_EPSILON );  
+    
+    //Get the minimum of the x and y parts of min(1, x, y)
+    float num_left = min(nDotV, nDotL);
+    const float num_right = 2 * nDotH;
+    
+    if( (num_left * num_right) <= denom)  // min(1,x,y) = x or y
+    {
+        //if x is minimum then it is multiplied by (nDotL / nDotL), meaning 1.0
+        num_left = (num_left == nDotV) ? 1.0 : (nDotL / nDotV);
+        return (num_left * num_right) / denom;
+    } else {
+        // min(1, x, y) = 1
+        return 1.0 / nDotV;          
+    }   
+    
 }
 
 
@@ -83,18 +109,18 @@ float4 CookTorrancePS(PS_IN input) : COLOR
     //Cook Torrance specular model (http://en.wikipedia.org/wiki/Specular_highlight#Cook.E2.80.93Torrance_model)
 
     //Distribution of having microfacets that do pure specular reflection
-    float D = Beckmann(n_dot_h,_Roughness);
+    const float D = Beckmann(n_dot_h,_Roughness);
    
-    //Geometric attenuation
-    const float G_const = 2 * n_dot_h / v_dot_h;
-    const float G1 = G_const * n_dot_v;
-    const float G2 = G_const * n_dot_l;
-    const float G = min(1.0,min(G1,G2));
+    //Geometric attenuation: G divided by (n . v)
+    const float G = GeometricAttenuation(n_dot_l, n_dot_v, v_dot_h, n_dot_h);
 
     //Fresnel
     const float F = SchlickFresnel(_FresnelCoef, v_dot_h);
 
-    const float cook_torrance = (D * G * F) / (4.0 * n_dot_v * n_dot_l);
+    // Division by (n . v)  is done in GeometricAttenuation()
+    // and division by (n . l ) is removed since outgoing radiance is determined by:
+    // BRDF * (n . l) * L()
+    const float cook_torrance = (D * G * F) / (4.0 );
     const float3 specular_term = cook_torrance * _LightColor0.rgb * _SpecularTint.rgb;
 
     //final
