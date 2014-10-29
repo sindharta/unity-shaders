@@ -42,7 +42,15 @@ Material:
       data:
         first:
           name: _Roughness
-        second: .600000024
+        second: .340000004
+      data:
+        first:
+          name: _Ks
+        second: 1
+      data:
+        first:
+          name: _Kd
+        second: 3
     m_Colors:
       data:
         first:

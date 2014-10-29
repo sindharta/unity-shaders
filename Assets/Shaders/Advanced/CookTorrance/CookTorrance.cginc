@@ -14,6 +14,9 @@ float4 _LightColor0;
 float4 _SpecularTint;
 float  _FresnelCoef;
 float  _Roughness;
+float  _Ks; //Specular 
+float  _Kd; //Diffuse
+
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -59,7 +62,11 @@ float Beckmann(const float nDotH, const float roughness) {
     return val;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
 
+float NormalDistribution(const float x) {
+    return exp(-0.5 * x * x) / pow(2 * PI,0.5);
+}
 //----------------------------------------------------------------------------------------------------------------------
 
 
@@ -102,7 +109,6 @@ float4 CookTorrancePS(PS_IN input) : COLOR
 
     //calculation
 	const float attenuation = LIGHT_ATTENUATION(input) * 2;
-	const float3 diffuse_term = n_dot_l * _LightColor0.rgb * _DiffuseTint.rgb * attenuation;
 	const float4 diffuse_tex = tex2D(_DiffuseTexture, input.uv);
 	const float3 albedo = pow(diffuse_tex.rgb,GAMMA);
 
@@ -121,10 +127,20 @@ float4 CookTorrancePS(PS_IN input) : COLOR
     // and division by (n . l ) is removed since outgoing radiance is determined by:
     // BRDF * (n . l) * L()
     const float cook_torrance = (D * G * F) / (4.0 );
-    const float3 specular_term = cook_torrance * _LightColor0.rgb * _SpecularTint.rgb;
+    const float specular_term = cook_torrance * _Ks;
+    
+    //Try to obey energy conservation
+    //rho: the percentage of flux received from all directions and reflected to a single dir
+    //approximate rho using NormalDistribution
+    const float diffuse_term =  (1.0 - (_Ks * NormalDistribution(n_dot_v) ))  //to obey symmetry 
+                              * (_Kd / PI)
+                              * (1.0 - (_Ks * NormalDistribution(n_dot_l) )); //not reflected in a single bounce
 
     //final
-	float4 final_color = float4(diffuse_term.rgb * albedo + specular_term,diffuse_tex.a);
+    const float3 light = _LightColor0.rgb * attenuation;
+    float4 final_color = float4(0,0,0,diffuse_tex.a);
+    final_color.rgb  = diffuse_term  * (light * n_dot_l) * albedo * _DiffuseTint.rgb;
+    final_color.rgb += specular_term * light * _SpecularTint.rgb;  //n_dot_l is implied in specular_term 
     SIN_SH_LIGHT(final_color,input);
 
     final_color.rgb = pow( final_color.rgb,INV_GAMMA);

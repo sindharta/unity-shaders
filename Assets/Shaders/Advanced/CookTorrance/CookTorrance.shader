@@ -7,6 +7,8 @@ Shader "sin/Advanced/CookTorrance" {
         _SpecularTint ( "Specular Tint", Color) = (1, 1, 1, 1)
         _FresnelCoef  ( "Fresnel Coef", Float) = 0.1
         _Roughness    ( "Roughness", Float) = 0.5
+        _Ks           ( "Ks", Float) = 1.0
+        _Kd           ( "Kd", Float) = 0.5
 	}
 
 	SubShader 
