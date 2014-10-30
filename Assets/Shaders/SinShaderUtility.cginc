@@ -17,4 +17,10 @@ half3 CalculateNormalMap(sampler2D normalMap, const float2 uv, const half3 t, co
 
 //----------------------------------------------------------------------------------------------------------------------
 
+float SchlickFresnel(float fresnelCoef, float vDotH) {
+    return fresnelCoef + (1.0 - fresnelCoef) * pow((1.0 - vDotH),5.0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
 #endif //end SIN_SHADER_UTILITY

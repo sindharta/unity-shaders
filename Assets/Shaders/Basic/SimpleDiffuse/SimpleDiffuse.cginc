@@ -35,8 +35,6 @@ PS_IN SimpleDiffuseVS(appdata_base v)
 	o.wsNormal = mul(float3x3(_Object2World), v.normal.xyz);
 
     //vertex lighting for additional lights
-    const float4 ws_pos = mul(_Object2World, v.vertex);
-
 	TRANSFER_VERTEX_TO_FRAGMENT(o);
     SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,o.wsNormal);
 
