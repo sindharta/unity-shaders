@@ -17,4 +17,5 @@ Build/**
 
 # UnityVS
 Assets/Plugins/UnityVS/Editor/UnityVS.VersionSpecific.*
+Assets/Plugins/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.*
 *.DotSettings
