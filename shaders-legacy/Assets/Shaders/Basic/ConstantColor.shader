@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "sin/Basic/ConstantColor" {
+﻿Shader "sin/Basic/ConstantColor" {
 	Properties 	{
 		_Color ( "Color", Color) = (1, 1, 1, 1)
 	}
@@ -34,7 +32,7 @@ Shader "sin/Basic/ConstantColor" {
 
             PS_IN ConstantColorVS(appdata_base v) {
                 PS_IN o;
-                o.pos = UnityObjectToClipPos(v.vertex);
+                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 return o;
             }
 

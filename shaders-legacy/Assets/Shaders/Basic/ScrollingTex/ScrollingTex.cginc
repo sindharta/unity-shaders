@@ -1,6 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 #ifndef SIN_BASIC_SCROLLING_TEX
 #define SIN_BASIC_SCROLLING_TEX
 
@@ -29,10 +26,10 @@ PS_IN VS(appdata_base v)
 {
 	PS_IN o;
 
-	o.pos = UnityObjectToClipPos(v.vertex);
+	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 	o.uv = v.texcoord;
 
-    const float3 world_normal = mul(float3x3(unity_ObjectToWorld), v.normal.xyz);
+    const float3 world_normal = mul(float3x3(_Object2World), v.normal.xyz);
 
 	TRANSFER_VERTEX_TO_FRAGMENT(o);
     SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,world_normal);

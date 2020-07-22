@@ -1,6 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 //Will output the color as it is without going back to the gamma space
 #ifndef SIN_BASIC_NORMAL_MAP
 #define SIN_BASIC_NORMAL_MAP
@@ -33,16 +30,16 @@ PS_IN NormalMapVS(appdata_tan v)
 {
 	PS_IN o;
 
-	o.pos = UnityObjectToClipPos(v.vertex);
+	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 	o.uv = v.texcoord;
 	o.wsLightDir = normalize(WorldSpaceLightDir(v.vertex));
 
     //[Note] Won't work for non-uniform scaling because we are not using inverse transpose
-	o.wsNormal = mul(float3x3(unity_ObjectToWorld), v.normal.xyz);
-    o.wsTangent = mul(float3x3(unity_ObjectToWorld), v.tangent.xyz);
+	o.wsNormal = mul(float3x3(_Object2World), v.normal.xyz);
+    o.wsTangent = mul(float3x3(_Object2World), v.tangent.xyz);
 
     //vertex lighting for additional lights
-    const float4 ws_pos = mul(unity_ObjectToWorld, v.vertex);   
+    const float4 ws_pos = mul(_Object2World, v.vertex);   
 
 	TRANSFER_VERTEX_TO_FRAGMENT(o);
     SIN_TRANSFER_SH_LIGHT_TO_FRAGMENT(o,o.wsNormal);

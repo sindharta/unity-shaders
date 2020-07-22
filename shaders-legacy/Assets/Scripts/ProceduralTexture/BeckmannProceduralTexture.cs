@@ -15,7 +15,7 @@ public class BeckmannProceduralTexture : MonoBehaviour {
 //----------------------------------------------------------------------------------------------------------------------
 
     void Awake() {
-        m_currentMaterial = transform.GetComponent<Renderer>().sharedMaterial;        
+        m_currentMaterial = transform.renderer.sharedMaterial;        
         m_generatedTex = GenerateBeckmannTexture();
         m_currentMaterial.SetTexture("_MainTex",m_generatedTex);        
         

@@ -1,6 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 //Perform lighting in linear space. Unity setting should be set to gamma setting
 
 #ifndef SIN_BASIC_BLINN_PHONG_SPECULAR
@@ -34,12 +31,12 @@ struct PS_IN {
 PS_IN BlinnPhongSpecularVS(appdata_base v) {
 	PS_IN o;
     
-    const float4 ws_pos = mul(unity_ObjectToWorld, v.vertex);
+    const float4 ws_pos = mul(_Object2World, v.vertex);
 
-	o.pos = UnityObjectToClipPos(v.vertex);
+	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 	o.uv = v.texcoord;
 	o.wsLightDir = normalize(WorldSpaceLightDir(v.vertex));
-	o.wsNormal  = mul(float3x3(unity_ObjectToWorld), v.normal.xyz);
+	o.wsNormal  = mul(float3x3(_Object2World), v.normal.xyz);
 	o.wsViewDir = normalize(_WorldSpaceCameraPos.xyz - ws_pos.xyz);
 
 	TRANSFER_VERTEX_TO_FRAGMENT(o);

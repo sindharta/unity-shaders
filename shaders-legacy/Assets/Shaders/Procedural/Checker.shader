@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "sin/Basic/Checker" {
+﻿Shader "sin/Basic/Checker" {
 	Properties {
 		_FirstColor  ("First Color", Color) = (1,1,1,1)
         _SecondColor ("Second Color", Color) = (1,1,1,1)
@@ -43,7 +41,7 @@ Shader "sin/Basic/Checker" {
 
             PS_IN CheckerVS(appdata_base v) {
                 PS_IN o;
-                o.pos = UnityObjectToClipPos(v.vertex);
+                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 o.uv = v.texcoord;
                 return o;
             }
