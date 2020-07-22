@@ -1,4 +1,6 @@
-﻿Shader "sin/Basic/ColorArray" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "sin/Basic/ColorArray" {
     Properties
     {
     }
@@ -43,7 +45,7 @@
 			{
 				PS_IN o;
 
-				o.pos = mul(UNITY_MATRIX_MVP, v.pos);
+				o.pos = UnityObjectToClipPos(v.pos);
                 float t = v.col.r * g_numColors;
                 int index = int(t);
                 o.col = g_colors[index];
