@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpriteMat
+  m_Name: SandboxSpriteMat
   m_Shader: {fileID: -6465566751694194690, guid: 87ee3bc177f5bf54ba26a758bea34293,
     type: 3}
   m_ShaderKeywords: 
