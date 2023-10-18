@@ -1,4 +1,4 @@
-Shader "Tutorial/046_Partial_Derivatives/testing"{
+Shader "sin/Debug/FWidth"{
 	Properties{
 		_Factor("Factor", Range(0, 1000)) = 1
 	}
