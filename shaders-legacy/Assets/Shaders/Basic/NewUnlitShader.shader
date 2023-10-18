@@ -42,6 +42,7 @@ Shader "Tutorial/046_Partial_Derivatives/testing"{
                 //zoom in  -> bigger area (smaller derivative value) -> darker
                 //zoom out -> smaller area (higher derivative value) -> brighter
 			    float derivative = fwidth(i.uv.x) * _Factor;
+				//derivative = abs(ddx(i.uv.x)) * _Factor; //same result
 				
 				float4 col = float4(derivative.xxx , 1);
 				return col;
