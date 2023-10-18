@@ -20,19 +20,17 @@ Shader "Tutorial/046_Partial_Derivatives/testing"{
 
 			float _Factor;
 
-			//the object data that's put into the vertex shader
 			struct appdata{
 				float4 vertex : POSITION;
 				float2 uv : TEXCOORD0;
 			};
 
-			//the data that's used to generate fragments and can be read by the fragment shader
 			struct v2f{
 				float4 position : SV_POSITION;
 				float2 uv : TEXCOORD0;
 			};
 
-			//the vertex shader
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------			
 			v2f vert(appdata v){
 				v2f o;
 				o.position = UnityObjectToClipPos(v.vertex);
@@ -40,12 +38,12 @@ Shader "Tutorial/046_Partial_Derivatives/testing"{
 				return o;
 			}
 
-			//the fragment shader
-			fixed4 frag(v2f i) : SV_TARGET{
-                //calculate the change of the uv coordinate to the next pixel
+			float4 frag(v2f i) : SV_TARGET{
+                //zoom in  -> bigger area (smaller derivative value) -> darker
+                //zoom out -> smaller area (higher derivative value) -> brighter
 			    float derivative = fwidth(i.uv.x) * _Factor;
-			    //transform derivative to greyscale color
-				fixed4 col = float4(derivative.xxx , 1);
+				
+				float4 col = float4(derivative.xxx , 1);
 				return col;
 			}
 
