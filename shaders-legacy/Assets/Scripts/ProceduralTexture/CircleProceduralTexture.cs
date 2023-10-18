@@ -15,7 +15,7 @@ public class CircleProceduralTexture : MonoBehaviour {
 
     void Awake() {
         if (null== m_currentMaterial) {
-            m_currentMaterial = transform.renderer.sharedMaterial;        
+            m_currentMaterial = transform.GetComponent<Renderer>().sharedMaterial;        
         }
         
         if (null== m_currentMaterial) {
