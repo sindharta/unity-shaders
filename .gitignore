@@ -20,6 +20,7 @@ Assets/AssetStoreTools*
 */Assets/*.pidb
 */Assets/*.pidb.meta
 **/.idea/**
+*/UserSettings/*
 
 # UnityVS
 */Assets/Plugins/UnityVS/Editor/UnityVS.VersionSpecific.*
