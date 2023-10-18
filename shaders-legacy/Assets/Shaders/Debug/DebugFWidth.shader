@@ -42,7 +42,7 @@ Shader "sin/Debug/FWidth"{
                 //zoom in  -> bigger area (smaller derivative value) -> darker
                 //zoom out -> smaller area (higher derivative value) -> brighter
 			    float derivative = fwidth(i.uv.x) * _Factor;
-				//derivative = abs(ddx(i.uv.x)) * _Factor; //same result
+				//derivative = abs(ddx(i.uv.x)) * _Factor; //only derivative along x axis. Gets darker when rotated along X axis
 				
 				float4 col = float4(derivative.xxx , 1);
 				return col;
