@@ -1,3 +1,4 @@
+//Source: https://bgolus.medium.com/anti-aliased-alpha-test-the-esoteric-alpha-to-coverage-8b177335ae4f
 Shader "sin/Advanced/AlphaToCoverageAA" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}

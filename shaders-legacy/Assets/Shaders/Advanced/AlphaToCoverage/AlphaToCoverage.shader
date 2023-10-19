@@ -1,3 +1,4 @@
+//Source: https://bgolus.medium.com/anti-aliased-alpha-test-the-esoteric-alpha-to-coverage-8b177335ae4f
 Shader "sin/Advanced/AlphaToCoverage" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
@@ -28,7 +29,7 @@ Shader "sin/Advanced/AlphaToCoverage" {
                 float2 uv : TEXCOORD0;
                 half3 normal : NORMAL;
             };
-
+    
             struct v2f{
                 float4 pos : SV_POSITION;
                 float2 uv : TEXCOORD0;
