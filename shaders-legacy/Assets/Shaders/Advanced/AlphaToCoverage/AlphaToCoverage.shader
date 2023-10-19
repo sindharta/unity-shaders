@@ -42,17 +42,7 @@ Shader "sin/Advanced/AlphaToCoverage" {
             fixed _Cutoff;
             half _MipScale;
 
-            float CalcMipLevel(float2 texture_coord)
-            {
-                float2 dx = ddx(texture_coord);
-                float2 dy = ddy(texture_coord);
-                float delta_max_sqr = max(dot(dx, dx), dot(dy, dy));
-
-                return max(0.0, 0.5 * log2(delta_max_sqr));
-            }
-
-            v2f vert(appdata v)
-            {
+            v2f vert(appdata v) {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
@@ -60,14 +50,8 @@ Shader "sin/Advanced/AlphaToCoverage" {
                 return o;
             }
 
-            fixed4 frag(v2f i, fixed facing : VFACE) : SV_Target
-            {
+            fixed4 frag(v2f i, fixed facing : VFACE) : SV_Target {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                // rescale alpha by mip level (if not using preserved coverage mip maps)
-                col.a *= 1 + max(0, CalcMipLevel(i.uv * _MainTex_TexelSize.zw)) * _MipScale;
-                // rescale alpha by partial derivative
-                col.a = (col.a - _Cutoff) / max(fwidth(col.a), 0.0001) + 0.5;
-
                 half3 worldNormal = normalize(i.worldNormal * facing);
 
                 fixed ndotl = saturate(dot(worldNormal, normalize(_WorldSpaceLightPos0.xyz)));
@@ -75,7 +59,6 @@ Shader "sin/Advanced/AlphaToCoverage" {
                 lighting += ShadeSH9(half4(worldNormal, 1.0));
 
                 col.rgb *= lighting;
-
                 return col;
             }
             ENDCG
