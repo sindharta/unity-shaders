@@ -10,8 +10,8 @@ public class AutoRotate : MonoBehaviour {
         float sinResult      = Mathf.Sin(Time.realtimeSinceStartup * m_rotateYSpeed);
         float yHalfAngleDiff = (m_maxYAngle - m_minYAngle) * 0.5f;
         
-        float yAngle         = m_minYAngle + (yHalfAngleDiff) + (yHalfAngleDiff * sinResult);        
-        m_transform.rotation = Quaternion.Euler(0, yAngle,0);        
+        float yAngle = m_minYAngle + (yHalfAngleDiff) + (yHalfAngleDiff * sinResult);        
+        m_transform.localRotation = Quaternion.Euler(0, yAngle,0);        
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------

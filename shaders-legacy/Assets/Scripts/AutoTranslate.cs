@@ -13,7 +13,7 @@ public class AutoTranslate : MonoBehaviour {
         float   sinResult = Mathf.Sin(Time.realtimeSinceStartup * m_translateSpeed);
         Vector3 halfOffset = m_endOffset * 0.5f;
         
-        m_transform.position= m_startPos + (halfOffset) + (halfOffset * sinResult);
+        m_transform.localPosition = m_startPos + (halfOffset) + (halfOffset * sinResult);
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
