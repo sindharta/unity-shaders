@@ -64,7 +64,7 @@ Shader "sin/Advanced/AlphaToCoverageAA" {
             fixed4 frag(v2f i, fixed facing : VFACE) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                // rescale alpha by mip level (if not using preserved coverage mip maps)
+                // rescale alpha by mip level (if not using preserved coverage mip maps) to prevent vanishing at far distance
                 col.a *= 1 + max(0, CalcMipLevel(i.uv * _MainTex_TexelSize.zw)) * _MipScale;
                 // rescale alpha by partial derivative
                 col.a = (col.a - _Cutoff) / max(fwidth(col.a), 0.0001) + 0.5;
