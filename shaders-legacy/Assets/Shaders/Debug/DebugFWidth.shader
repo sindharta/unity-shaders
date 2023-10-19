@@ -11,10 +11,8 @@ Shader "sin/Debug/FWidth"{
 		Pass{
 			CGPROGRAM
 
-			//include useful shader functions
 			#include "UnityCG.cginc"
 
-			//define vertex and fragment shader
 			#pragma vertex vert
 			#pragma fragment frag
 
