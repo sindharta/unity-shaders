@@ -25,10 +25,6 @@ SubShader {
     Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
     Blend SrcAlpha OneMinusSrcAlpha         
     
-//    Tags {
-//        "IgnoreProjector"="True"
-//        "RenderType"="Transparent"
-//    }
     LOD 200
 
 CGPROGRAM
@@ -111,8 +107,6 @@ ENDCG
         }
         
         float4 frag_surf (v2f_surf IN) : SV_Target {
-            half alpha = tex2D(_MainTex, IN.hip_pack0.xy).a;
-            return float4(alpha,alpha,alpha,0);
             SHADOW_CASTER_FRAGMENT(IN)
         }
         ENDCG
