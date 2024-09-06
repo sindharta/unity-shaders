@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PixelateByLightAlpha
+  m_Name: PixelateByLightAlpha_Lit
   m_Shader: {fileID: -6465566751694194690, guid: c15b1d4db6eb813439fad0e1a1a9ba5d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
