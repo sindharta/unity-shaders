@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PixelateSpriteLighting_Custom_Lit
+  m_Name: PixelateSpriteDirect_Lit
   m_Shader: {fileID: -6465566751694194690, guid: 9f58b6c4bdf487a49b1244bd35bc8d70, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
