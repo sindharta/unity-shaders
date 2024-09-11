@@ -84,11 +84,7 @@ internal static class ExtendedClipEditorUtility {
     private static void SetTimelineClipCurve(TimelineClip destClip, AnimationCurve srcCurve, EditorCurveBinding curveBinding) {
         AnimationUtility.SetEditorCurve(destClip.curves, curveBinding, srcCurve);
         
-#if AT_USE_TIMELINE_GE_1_5_0                    
         TimelineEditor.Refresh(RefreshReason.WindowNeedsRedraw );
-#else         
-        TimelineEditor.Refresh(RefreshReason.ContentsAddedOrRemoved ); //must use this for Pre- 1.5.0
-#endif //AT_USE_TIMELINE_GE_1_5_0            
         
     }
 }

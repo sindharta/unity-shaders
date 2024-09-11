@@ -85,11 +85,7 @@ internal static class TimelineEditorUtility {
 //----------------------------------------------------------------------------------------------------------------------
     
     internal static void ShowTimelineWindow() {
-#if !AT_USE_TIMELINE_GE_1_5_0            
-        EditorApplication.ExecuteMenuItem("Window/Sequencing/Timeline");        
-#else 
         TimelineEditor.GetOrCreateWindow();
-#endif
     }
 
     
@@ -124,12 +120,8 @@ internal static class TimelineEditorUtility {
     
     //TimelineEditor.Refresh() has been optimized in 1.5.0 above, so WindowNeedsRedraw is enough by default. 
     const RefreshReason DEFAULT_REFRESH_REASON = 
-#if AT_USE_TIMELINE_GE_1_5_0
         RefreshReason.WindowNeedsRedraw;
-#else
-        RefreshReason.ContentsAddedOrRemoved;
-#endif //AT_USE_TIMELINE_GE_1_5_0
-    
+
 
 }
 
