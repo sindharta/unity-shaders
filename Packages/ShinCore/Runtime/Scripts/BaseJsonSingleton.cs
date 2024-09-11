@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
+using Shin.Core;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 /// <summary>
 /// Default settings path: "[type name].json". Can be overridden with Json attribute

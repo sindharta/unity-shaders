@@ -1,6 +1,6 @@
 ﻿using System;                               //Action
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 internal class PackageRemoveRequestInfo{
     internal readonly string PackageName;
     internal readonly Action OnSuccessAction;

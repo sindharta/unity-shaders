@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager;           //StatusCode
 using System;                               //Action
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 //---------------------------------------------------------------------------------------------------------------------
 //Non-generics version

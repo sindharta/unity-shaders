@@ -5,7 +5,7 @@ using UnityEditor;
 #endif
 
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 
 /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A class that holds the version (semantic versioned) of a package in a structure

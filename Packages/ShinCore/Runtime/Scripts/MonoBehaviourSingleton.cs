@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Unity.FilmInternalUtilities
+namespace Shin.Core
 {
 
 internal abstract class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviour {
@@ -49,7 +49,7 @@ internal abstract class MonoBehaviourSingleton<T> : MonoBehaviour where T : Mono
             if (null != m_instance) {
                 if (this != m_instance) {
                     Debug.LogWarning($"[FIU] Duplicate singleton of type {typeof(T)} is detected. Destroying.");
-                    FilmInternalUtilities.ObjectUtility.Destroy(this.gameObject);
+                    Shin.Core.ObjectUtility.Destroy(this.gameObject);
                     return;
                 }
 

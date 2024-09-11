@@ -4,7 +4,7 @@ using System.Text;
 using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// Extension methods for ReadOnlyCollection<PackageInfo> class.

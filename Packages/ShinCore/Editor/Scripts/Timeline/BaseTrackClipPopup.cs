@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.FilmInternalUtilities; //Required when using Timeline 1.4.x or below
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Assertions;
 using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal abstract class BaseTrackClipPopup<PopupType, TrackAssetType> : EditorWindow 
     where PopupType: BaseTrackClipPopup<PopupType, TrackAssetType> 

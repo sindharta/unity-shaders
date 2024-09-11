@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 [AttributeUsage(AttributeTargets.Class)]
 internal class JsonAttribute : Attribute {
     internal JsonAttribute(string path) {

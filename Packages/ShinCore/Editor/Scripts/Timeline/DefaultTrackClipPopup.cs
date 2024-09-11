@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal class DefaultTrackClipPopup : BaseTrackClipPopup<DefaultTrackClipPopup, TrackAsset>  {
 }

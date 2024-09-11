@@ -4,7 +4,7 @@ using UnityEditor.PackageManager;           //PackageCollection
 using System;                               //Action
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 
 /// <summary>

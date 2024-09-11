@@ -2,7 +2,7 @@
 using System.Reflection;
 using Type = System.Type;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class LayoutUtility {
 

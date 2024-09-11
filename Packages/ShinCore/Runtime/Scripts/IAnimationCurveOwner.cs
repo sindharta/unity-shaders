@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal interface IAnimationCurveOwner {
     void SetAnimationCurve(AnimationCurve curve);

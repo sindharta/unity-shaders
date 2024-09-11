@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager.Requests;  //ListRequest, AddRequest, etc
 using UnityEditor.PackageManager;           //PackageInfo
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal class PackageAddRequestInfo {
     internal readonly string PackageName;

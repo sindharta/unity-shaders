@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class FilmInternalUtilitiesEditorConstants  {
     internal const string PACKAGE_NAME = "com.unity.film-internal-utilities";

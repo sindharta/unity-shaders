@@ -3,7 +3,7 @@ using System.IO;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 /// <summary>
 /// A utility class for executing operations related to Unity assets.

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 
 /// <summary>

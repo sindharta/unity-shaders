@@ -1,6 +1,6 @@
 ﻿using UnityEditor.PackageManager;           //StatusCode
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal interface IRequestJob {
     StatusCode Update();

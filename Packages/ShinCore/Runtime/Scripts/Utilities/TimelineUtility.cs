@@ -4,7 +4,7 @@ using UnityEngine.Assertions;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 
 internal static class TimelineUtility {

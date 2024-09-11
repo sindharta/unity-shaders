@@ -1,4 +1,4 @@
-﻿namespace Unity.FilmInternalUtilities {
+﻿namespace Shin.Core {
 internal interface ICanRefresh {
     bool Refresh(); //return false if Refresh() failed, true otherwise
 }

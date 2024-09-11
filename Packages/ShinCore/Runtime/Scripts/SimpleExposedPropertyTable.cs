@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Object = UnityEngine.Object;
 
-namespace Unity.FilmInternalUtilities 
+namespace Shin.Core 
 {
 
 //[Note-sin: 2022-03-30] In theory, we are able to make this IExposedPropertyTable implementation as a non-component,

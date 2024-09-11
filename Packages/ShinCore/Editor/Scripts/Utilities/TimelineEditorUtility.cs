@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using Object = UnityEngine.Object;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A utility class for executing operations related to Timeline assets in the editor.

@@ -2,7 +2,7 @@
 using UnityEditor;
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class UnityEditorReflection {
     

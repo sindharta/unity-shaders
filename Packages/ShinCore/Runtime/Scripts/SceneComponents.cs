@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 #endif
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 internal class SceneComponents<T> where T : Component {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------    
@@ -59,7 +59,7 @@ internal class SceneComponents<T> where T : Component {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void ForceUpdate() {
         m_cachedComponents.Clear();
-        m_cachedComponents.AddRange(FilmInternalUtilities.ObjectUtility.FindSceneComponentsAsArray<T>(m_includeInactive));
+        m_cachedComponents.AddRange(Shin.Core.ObjectUtility.FindSceneComponentsAsArray<T>(m_includeInactive));
         m_prevUpdateFrame = Time.frameCount;
     }
     

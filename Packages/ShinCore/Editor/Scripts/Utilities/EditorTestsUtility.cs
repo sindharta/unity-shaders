@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEditor.Timeline;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class EditorTestsUtility {
                 

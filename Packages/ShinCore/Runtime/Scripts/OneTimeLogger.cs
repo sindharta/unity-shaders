@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 
 internal class OneTimeLogger {

@@ -5,7 +5,7 @@ using UnityEditor.Timeline;
 using UnityEngine.Assertions;
 using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class TimelineEditorReflection {
     

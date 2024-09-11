@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities
+namespace Shin.Core
 {    
 internal abstract class BaseTrack : TrackAsset {
     

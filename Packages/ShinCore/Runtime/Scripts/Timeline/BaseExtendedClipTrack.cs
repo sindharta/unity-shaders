@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 using UnityEditor;
 #endif
 
-namespace Unity.FilmInternalUtilities { 
+namespace Shin.Core { 
 /// <summary>
 /// A track which requires its TimelineClip to store BaseClipData as an extension
 /// </summary>

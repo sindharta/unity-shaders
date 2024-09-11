@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager.Requests;  //ListRequest, AddRequest, etc
 using UnityEditor.PackageManager;           //PackageCollection
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 internal class PackageListRequestInfo {
     internal readonly bool OfflineMode;
     internal readonly bool IncludeIndirectIndependencies;

@@ -3,7 +3,7 @@ using UnityEditor.PackageManager;       //PackageCollection
 using System.Collections.Generic;       //IEnumerable
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// An extension class to extend the functionality of UnityEditor.PackageManager.Requests classes

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class EditorWindowExtensions {
     internal static Vector2 GetWindowSize(this EditorWindow editorWindow) {

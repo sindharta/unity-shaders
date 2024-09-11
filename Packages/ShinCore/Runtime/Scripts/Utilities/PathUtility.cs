@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using JetBrains.Annotations;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 /// <summary>
 /// A utility class for executing path-related operations.

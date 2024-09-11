@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class ListExtensions {
     

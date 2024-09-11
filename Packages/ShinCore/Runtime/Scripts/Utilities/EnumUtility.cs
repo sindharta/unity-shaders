@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class EnumUtility {
 

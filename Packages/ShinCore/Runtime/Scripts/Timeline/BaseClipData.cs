@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 [Serializable]
 internal abstract class BaseClipData : ISerializationCallbackReceiver {

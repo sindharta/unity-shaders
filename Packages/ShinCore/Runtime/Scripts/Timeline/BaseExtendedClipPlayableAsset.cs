@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal abstract class BaseExtendedClipPlayableAsset<D> : PlayableAsset where D: BaseClipData {
 

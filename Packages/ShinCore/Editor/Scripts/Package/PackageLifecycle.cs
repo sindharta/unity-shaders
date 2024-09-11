@@ -1,4 +1,4 @@
-﻿namespace Unity.FilmInternalUtilities.Editor {
+﻿namespace Shin.Core.Editor {
 
 /// <summary>
 /// The lifecycle status of a package

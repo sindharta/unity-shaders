@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 internal static class ExposedReferenceEditorUtility {
     internal static void RecreateReferencesInObject(object obj, IExposedPropertyTable propertyTable) {

@@ -5,7 +5,7 @@ using UnityEditor;
 using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A class to notify users to restart Unity, if requested 

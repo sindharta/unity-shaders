@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A utility class for executing operations related to Unity assets in the editor.

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.LowLevel;
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A utility class for drawing GUI in the editor.

@@ -8,7 +8,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 
 
-namespace Unity.FilmInternalUtilities.Editor {
+namespace Shin.Core.Editor {
 
 /// <summary>
 /// A utility class for executing operations related to UIElements.

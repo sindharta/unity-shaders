@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class YieldUtility {
                 

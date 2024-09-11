@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 using UnityEditor;
 #endif
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 internal static class ObjectUtility {
 
     internal static IEnumerable<T> FindSceneComponents<T>(bool includeInactive = true) where T: UnityEngine.Component {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class HashSetExtensions {
     

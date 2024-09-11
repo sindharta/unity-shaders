@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class EnumerableExtensions {
 

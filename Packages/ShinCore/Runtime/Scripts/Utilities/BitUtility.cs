@@ -1,4 +1,4 @@
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class BitUtility {
     

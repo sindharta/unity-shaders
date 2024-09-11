@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine.Timeline;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class TimelineAssetExtensions {
 

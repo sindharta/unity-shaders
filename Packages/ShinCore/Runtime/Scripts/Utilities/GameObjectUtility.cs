@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Unity.FilmInternalUtilities {
+namespace Shin.Core {
 
 internal static class GameObjectUtility {
 
