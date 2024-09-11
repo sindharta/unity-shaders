@@ -5,6 +5,7 @@
 	"unity": "2022.3",
 	"description": "Various Unity utilities",
 	"dependencies": {
+        "com.unity.timeline": "1.7.6"
 	}
     
 }
