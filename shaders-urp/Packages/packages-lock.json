@@ -4,7 +4,9 @@
       "version": "file:../../Packages/ShinCore",
       "depth": 0,
       "source": "local",
-      "dependencies": {}
+      "dependencies": {
+        "com.unity.timeline": "1.7.6"
+      }
     },
     "com.unity.ai.navigation": {
       "version": "1.1.5",
