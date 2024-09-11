@@ -113,7 +113,7 @@ internal class UIElementsEditorUtility {
 	
 //----------------------------------------------------------------------------------------------------------------------	
 
-	private static readonly string FIELD_TEMPLATE_PATH = Path.Combine(FilmInternalUtilitiesEditorConstants.PACKAGE_PATH,"Editor/UIElements/FieldTemplate");
+	private static readonly string FIELD_TEMPLATE_PATH = Path.Combine(ShinCoreEditorConstants.PACKAGE_PATH,"Editor/UIElements/FieldTemplate");
 	private static VisualTreeAsset m_fieldTemplate = null;
     
 }
