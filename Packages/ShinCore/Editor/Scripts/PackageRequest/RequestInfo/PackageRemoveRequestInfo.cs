@@ -15,4 +15,4 @@ internal class PackageRemoveRequestInfo{
     }
 }
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

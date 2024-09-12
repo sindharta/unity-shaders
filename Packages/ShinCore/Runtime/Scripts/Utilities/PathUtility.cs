@@ -32,7 +32,7 @@ internal static class PathUtility {
         return n > 1 ? GetDirectoryName(curDir, n - 1) : curDir;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     /// <summary>
     /// Generate a unique folder by trying with the passed parameter as the first candidate.

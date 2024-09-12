@@ -4,11 +4,11 @@
 /// The lifecycle status of a package
 /// </summary>
 internal enum PackageLifecycle {
-    INVALID,
-    EXPERIMENTAL,
-    PREVIEW,
-    PRERELEASE,
-    RELEASED,
+    Invalid,
+    Experimental,
+    Preview,
+    Prerelease,
+    Released,
 }
 
 }

@@ -17,4 +17,4 @@ internal class PackageAddRequestInfo {
     }
 }
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

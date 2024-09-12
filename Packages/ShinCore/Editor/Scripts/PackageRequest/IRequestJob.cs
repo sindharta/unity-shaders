@@ -8,4 +8,4 @@ internal interface IRequestJob {
 }
 
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

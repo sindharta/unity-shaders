@@ -10,7 +10,7 @@ internal class PackageVersion {
     //private: force to use TryParse()
     private PackageVersion() { }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     internal int? GetMajor() => m_major;
     internal int? GetMinor() => m_minor;
@@ -20,16 +20,16 @@ internal class PackageVersion {
     
     internal string GetMetadata() => m_additionalMetadata;
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     public override string ToString() {        
         string ret = $"{SingleVerToString(m_major)}.{SingleVerToString(m_minor)}.{SingleVerToString(m_patch)}";
 
         switch (this.m_lifecycle) {
-            case PackageLifecycle.RELEASED: break;
-            case PackageLifecycle.PRERELEASE: ret += "-pre"; break;
-            case PackageLifecycle.PREVIEW:
-            case PackageLifecycle.EXPERIMENTAL: {
+            case PackageLifecycle.Released: break;
+            case PackageLifecycle.Prerelease: ret += "-pre"; break;
+            case PackageLifecycle.Preview:
+            case PackageLifecycle.Experimental: {
                 ret += "-" + m_lifecycle.ToString().ToLower();
                 break;                
             }
@@ -44,7 +44,7 @@ internal class PackageVersion {
 
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     /// <summary>
     /// Parse a semantic versioned string to a PackageVersion class
@@ -72,14 +72,14 @@ internal class PackageVersion {
         if (!TryParseSingleVer(patches[0], out packageVersion.m_patch))
             return false;
                
-        PackageLifecycle lifecycle = PackageLifecycle.RELEASED;
+        PackageLifecycle lifecycle = PackageLifecycle.Released;
         if (patches.Length > 1) {
             string lifecycleStr = patches[1].ToLower();                    
             switch (lifecycleStr) {
-                case "experimental": lifecycle = PackageLifecycle.EXPERIMENTAL; break;
-                case "preview"     : lifecycle = PackageLifecycle.PREVIEW; break;
-                case "pre"         : lifecycle = PackageLifecycle.PRERELEASE; break;
-                default: lifecycle             = PackageLifecycle.INVALID; break;
+                case "experimental": lifecycle = PackageLifecycle.Experimental; break;
+                case "preview"     : lifecycle = PackageLifecycle.Preview; break;
+                case "pre"         : lifecycle = PackageLifecycle.Prerelease; break;
+                default: lifecycle             = PackageLifecycle.Invalid; break;
             }
             
         } 
@@ -94,7 +94,7 @@ internal class PackageVersion {
         return true;
     }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     static bool TryParseSingleVer(string token, out int? version) {
         if (token == "x") {
             version = null;
@@ -115,7 +115,7 @@ internal class PackageVersion {
     }
 
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     private int? m_major = 0;
     private int? m_minor = 0;
     private int? m_patch = 0;

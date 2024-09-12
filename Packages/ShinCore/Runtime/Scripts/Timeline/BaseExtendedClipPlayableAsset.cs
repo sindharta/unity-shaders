@@ -16,7 +16,7 @@ internal abstract class BaseExtendedClipPlayableAsset<D> : PlayableAsset where D
 
     protected virtual void OnDestroyInternalV() { }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     internal void BindClipData(D data) { m_clipData = data;}         
     
@@ -30,7 +30,7 @@ internal abstract class BaseExtendedClipPlayableAsset<D> : PlayableAsset where D
         return newData;
     }    
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     //[Note-sin: 2021-1-21] BaseClipData stores extra data for TimelineClip
     [NonSerialized] private D m_clipData = null;

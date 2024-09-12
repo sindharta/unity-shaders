@@ -25,7 +25,7 @@ internal static class AssetUtility {
         if (!IsAssetPath(path, out string slashedPath)) 
             return null;
         
-        string normalizedPath = slashedPath.Substring(m_assetPathPrefix.Length);
+        string normalizedPath = slashedPath.Substring(ASSET_PATH_PREFIX.Length);
         return normalizedPath;
     }
 
@@ -71,12 +71,12 @@ internal static class AssetUtility {
         
         Assert.IsNotNull(path);
         convertedPath = path.Replace('\\', '/');
-        return convertedPath.StartsWith(m_assetPathPrefix);
+        return convertedPath.StartsWith(ASSET_PATH_PREFIX);
     }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-    private const  string m_assetPathPrefix = "Assets/";
+    private const string ASSET_PATH_PREFIX = "Assets/";
         
 }
 

@@ -40,7 +40,7 @@ internal abstract class BaseExtendedClipTrack<D> : BaseTrack where D: BaseClipDa
     protected virtual void OnEnableInternalV() { }
     
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     /// <inheritdoc/>
     protected override void OnBeforeTrackSerialize() {
         base.OnBeforeTrackSerialize();
@@ -183,13 +183,13 @@ internal abstract class BaseExtendedClipTrack<D> : BaseTrack where D: BaseClipDa
     protected abstract Playable CreateTrackMixerInternal(PlayableGraph graph, GameObject go, int inputCount);
     
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     /// <inheritdoc/>
     public override string ToString() { return name; }   
 
         
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private void BindClipDataToClip() {
         GetClips().Loop((TimelineClip clip) => {

@@ -11,7 +11,7 @@ internal static class GUILayoutUtility {
         }
     }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     internal static void ReserveRect(ref Rect rect, GUIContent content, GUIStyle guiStyle, params GUILayoutOption[] options) {
         Rect r = UnityEngine.GUILayoutUtility.GetRect(content, guiStyle, options);

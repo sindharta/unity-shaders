@@ -13,7 +13,7 @@ namespace Shin.Core.Editor {
 /// <summary>
 /// A utility class for executing operations related to UIElements.
 /// </summary>
-internal class UIElementsEditorUtility {
+public static class UIElementsEditorUtility {
     
     /// <summary>
     /// Load a UXML file
@@ -25,13 +25,13 @@ internal class UIElementsEditorUtility {
         string path = pathWithoutExt + ext;
         VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
         if (null == asset) {
-            Debug.LogError("[AnimeToolbox] Can't load VisualTreeAsset: " + path);
+            Debug.LogError("[ShinCore] Can't load VisualTreeAsset: " + path);
             return null;
         }
         return asset;
     }    
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     /// <summary>
     /// Load UIElement style file and adds it to StyleSheetSet
@@ -43,13 +43,13 @@ internal class UIElementsEditorUtility {
         string path = pathWithoutExt + ext;
         StyleSheet asset = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
         if (null == asset) {
-            Debug.LogError("[AnimeToolbox] Can't load style: " + path);
+            Debug.LogError("[ShinCore] Can't load style: " + path);
             return;
         }
         set.Add(asset);
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     internal static PopupField<T> AddPopupField<T>(VisualElement parent, GUIContent content,
     	List<T> options, T defaultValue, Action<ChangeEvent<T>> onValueChanged) 
     {
@@ -69,10 +69,10 @@ internal class UIElementsEditorUtility {
     	return popupField;
     }
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	//Support Toggle, FloatField, etc
-	internal static F AddField<F,V>(VisualElement parent, GUIContent content,
+	public static F AddField<F,V>(VisualElement parent, GUIContent content,
 		V initialValue, Action<ChangeEvent<V>> onValueChanged) where F: VisualElement,INotifyValueChanged<V>, new()  
 	{
 		TemplateContainer templateInstance = CloneFieldTemplate();
@@ -101,7 +101,7 @@ internal class UIElementsEditorUtility {
 		return field;
 	}	
 	
-//----------------------------------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	private static TemplateContainer CloneFieldTemplate() {
 		if (null == m_fieldTemplate) {
@@ -111,7 +111,7 @@ internal class UIElementsEditorUtility {
 		return m_fieldTemplate.CloneTree();
 	}
 	
-//----------------------------------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------	
 
 	private static readonly string FIELD_TEMPLATE_PATH = Path.Combine(ShinCoreEditorConstants.PACKAGE_PATH,"Editor/UIElements/FieldTemplate");
 	private static VisualTreeAsset m_fieldTemplate = null;
@@ -119,4 +119,4 @@ internal class UIElementsEditorUtility {
 }
 
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

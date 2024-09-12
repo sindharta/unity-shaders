@@ -59,7 +59,7 @@ internal static class TimelineEditorUtility {
         return clip;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     
     /// <summary>
@@ -82,7 +82,7 @@ internal static class TimelineEditorUtility {
         AssetDatabase.DeleteAsset(assetPath);            
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     internal static void ShowTimelineWindow() {
         TimelineEditor.GetOrCreateWindow();
@@ -106,7 +106,7 @@ internal static class TimelineEditorUtility {
         TimelineEditor.Refresh(reason);
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     //Returns an object with EditorClip type. This object should be manually destroyed
     internal static ScriptableObject SelectTimelineClipInInspector(TimelineClip clip) {
@@ -116,11 +116,10 @@ internal static class TimelineEditorUtility {
         return editorClip;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     //TimelineEditor.Refresh() has been optimized in 1.5.0 above, so WindowNeedsRedraw is enough by default. 
-    const RefreshReason DEFAULT_REFRESH_REASON = 
-        RefreshReason.WindowNeedsRedraw;
+    const RefreshReason DEFAULT_REFRESH_REASON = RefreshReason.WindowNeedsRedraw;
 
 
 }
