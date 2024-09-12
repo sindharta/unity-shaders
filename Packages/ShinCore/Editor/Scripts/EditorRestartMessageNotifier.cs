@@ -18,7 +18,7 @@ internal static class EditorRestartMessageNotifier {
         EditorApplication.update += WaitUntilNotify;
     }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     static void WaitUntilNotify() {
         if (EditorApplication.timeSinceStartup < m_notifyTime) {
@@ -45,7 +45,7 @@ internal static class EditorRestartMessageNotifier {
         
     }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     /// <summary>
     /// Request to notify users to restart Unity after loading (compiling) scripts.
@@ -57,7 +57,7 @@ internal static class EditorRestartMessageNotifier {
         
     }
     
-//----------------------------------------------------------------------------------------------------------------------  
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------  
 
     private static readonly List<PackageInfo> m_onLoadPackageRequesters = new List<PackageInfo>();
     private static double m_notifyTime = 0;

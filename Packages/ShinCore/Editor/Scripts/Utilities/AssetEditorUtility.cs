@@ -29,7 +29,7 @@ internal static class AssetEditorUtility {
         return true;        
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     /// <summary>
     /// Creates an asset in a given path from an Object.
@@ -45,7 +45,7 @@ internal static class AssetEditorUtility {
         AssetDatabase.CreateAsset(asset, path);
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     public static T LoadAssetByGUID<T>(string guid) where T:UnityEngine.Object {
         string path  = AssetDatabase.GUIDToAssetPath(guid);
@@ -96,7 +96,7 @@ internal static class AssetEditorUtility {
         return foundAssetPaths;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     /// <summary>
     /// Create an asset file for the active scene, using the object name as the file name when applicable.
     /// If the active scene has been saved, then this asset will also be saved in the scene folder.
@@ -122,7 +122,7 @@ internal static class AssetEditorUtility {
         return path;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     /// <summary>
     /// Delete assets/files in a given path with specified file patterns.
@@ -149,7 +149,7 @@ internal static class AssetEditorUtility {
         EnumerateFiles(path, searchPattern, onFileFound);        
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     /// <summary>
     /// Normalize an absolute path under Unity project to make it relative to the Unity project folder.
@@ -179,7 +179,7 @@ internal static class AssetEditorUtility {
         return normalizedPath;
     }    
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     /// <summary>
     /// Returns whether the path points to a path under "Assets" folder

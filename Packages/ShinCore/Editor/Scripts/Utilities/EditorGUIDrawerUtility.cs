@@ -12,10 +12,8 @@ namespace Shin.Core.Editor {
 /// </summary>
 internal static class EditorGUIDrawerUtility {    
 
-//----------------------------------------------------------------------------------------------------------------------
-
     /// <summary>
-    /// Draws a standard file selector GUI used in AnimeToolbox. 
+    /// Draws a standard file selector GUI. 
     /// </summary>
     /// <param name="label">The label. Can be null.</param>
     /// <param name="panelDialogTitle">The title of the file panel dialog box.</param>
@@ -24,7 +22,6 @@ internal static class EditorGUIDrawerUtility {
     /// <param name="onReload">The action to be performed when the reload button is clicked.
     ///     Passing null will hide the reload button.
     /// </param>
-    /// <param name="onValidFileSelected">A postprocess to be executed on the new path. Can be null.</param>
     /// <returns></returns>
     public static string DrawFileSelectorGUI(string label, 
         string panelDialogTitle, 
@@ -51,7 +48,7 @@ internal static class EditorGUIDrawerUtility {
         return newFilePath;
     }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     /// <summary>
     /// Draws a standard folder selector GUI used in AnimeToolbox. 
     /// </summary>
@@ -61,7 +58,6 @@ internal static class EditorGUIDrawerUtility {
     /// <param name="onReload">The action to be performed when the reload button is clicked.
     ///     Passing null will hide the reload button.
     /// </param>
-    /// <param name="onValidFolderSelected">A postprocess to be executed on the new path. Can be null.</param>
     /// <returns></returns>
     public static string DrawFolderSelectorGUI(string label, 
         string panelDialogTitle, 
@@ -86,7 +82,7 @@ internal static class EditorGUIDrawerUtility {
         return newDirPath;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     //returns true if the GUI is changed, false otherwise
     internal static bool DrawUndoableGUI<V>(UnityEngine.Object target, string undoText,  
         Func<V> guiFunc, 
@@ -103,7 +99,7 @@ internal static class EditorGUIDrawerUtility {
         return true;
     }
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     [CanBeNull]
     internal static string DrawScrollableTextAreaGUI(UnityEngine.Object target, string label, float textAreaHeight, 
         string prevText, ref Vector2 scrollPos, Action<string> updateFunc) 
@@ -133,7 +129,7 @@ internal static class EditorGUIDrawerUtility {
     }
 
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     private static string DrawSelectFileButton(string panelDialogTitle, string filePath, string fileExtension) 
     {
         bool buttonPressed = DrawTextureButton("d_Project@2x", "Select");
@@ -150,7 +146,7 @@ internal static class EditorGUIDrawerUtility {
         return filePath;       
     }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     
     private static string DrawSelectFolderButton(string title, string folderPath) 
     {
@@ -168,7 +164,7 @@ internal static class EditorGUIDrawerUtility {
     }
         
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     private static string ReceiveDragAndDropFromLastGUI(string val) {
         Rect lastGUIRect = UnityEngine.GUILayoutUtility.GetLastRect();
         
@@ -198,7 +194,7 @@ internal static class EditorGUIDrawerUtility {
 
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private static void DrawSelectableText(string prefix, string text) {
         if (!string.IsNullOrEmpty (prefix)) {

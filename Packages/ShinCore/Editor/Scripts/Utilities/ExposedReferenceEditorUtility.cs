@@ -94,7 +94,7 @@ internal static class ExposedReferenceEditorUtility {
         table.SetReferenceValue(newGUID, resolvedObject);
     }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     internal const string EXPOSED_NAME_FIELD_NAME = "exposedName";
 

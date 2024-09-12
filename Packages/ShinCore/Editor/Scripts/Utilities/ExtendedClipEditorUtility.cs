@@ -24,7 +24,7 @@ internal static class ExtendedClipEditorUtility {
         clip.clipIn = 0;
     }
        
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     
     
     internal static bool SetClipDataCurve<T>(BaseExtendedClipPlayableAsset<T> playableAsset, 
@@ -43,7 +43,7 @@ internal static class ExtendedClipEditorUtility {
     }
 
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     
     internal static void CreateTimelineClipCurve(TimelineClip clip, EditorCurveBinding curveBinding) {        
         clip.CreateCurves("Curves: " + clip.displayName);
@@ -53,7 +53,7 @@ internal static class ExtendedClipEditorUtility {
 
     }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     //Make sure that TimelineClip has a curve set
     internal static AnimationCurve ValidateTimelineClipCurve(TimelineClip clip, EditorCurveBinding curveBinding)         
@@ -73,12 +73,12 @@ internal static class ExtendedClipEditorUtility {
         return curve;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     private static AnimationCurve CreateDefaultAnimationCurve(TimelineClip clip) {
         return AnimationCurve.Linear(0f,0f,(float)(clip.duration * clip.timeScale),1f);        
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
     private static void SetTimelineClipCurve(TimelineClip destClip, AnimationCurve srcCurve, EditorCurveBinding curveBinding) {

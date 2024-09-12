@@ -35,7 +35,7 @@ internal static class TimelineEditorReflection {
     }
     
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
     
     static readonly Type TIMELINE_HELPERS_TYPE = typeof(TimelineEditor).Assembly.GetType("UnityEditor.Timeline.TimelineHelpers");
     
