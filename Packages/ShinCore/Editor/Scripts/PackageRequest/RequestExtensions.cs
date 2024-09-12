@@ -39,4 +39,4 @@ internal static class RequestExtensions
     }
 }
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

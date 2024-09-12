@@ -19,4 +19,4 @@ internal class PackageListRequestInfo {
     }
 }
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core

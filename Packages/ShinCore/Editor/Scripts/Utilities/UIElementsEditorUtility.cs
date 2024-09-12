@@ -119,4 +119,4 @@ public static class UIElementsEditorUtility {
 }
 
 
-} //namespace Unity.AnimeToolbox
+} //namespace Shin.Core
