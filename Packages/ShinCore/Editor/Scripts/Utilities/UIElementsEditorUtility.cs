@@ -13,7 +13,7 @@ namespace Shin.Core.Editor {
 /// <summary>
 /// A utility class for executing operations related to UIElements.
 /// </summary>
-internal class UIElementsEditorUtility {
+public static class UIElementsEditorUtility {
     
     /// <summary>
     /// Load a UXML file
@@ -25,7 +25,7 @@ internal class UIElementsEditorUtility {
         string path = pathWithoutExt + ext;
         VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
         if (null == asset) {
-            Debug.LogError("[AnimeToolbox] Can't load VisualTreeAsset: " + path);
+            Debug.LogError("[ShinCore] Can't load VisualTreeAsset: " + path);
             return null;
         }
         return asset;
@@ -43,7 +43,7 @@ internal class UIElementsEditorUtility {
         string path = pathWithoutExt + ext;
         StyleSheet asset = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
         if (null == asset) {
-            Debug.LogError("[AnimeToolbox] Can't load style: " + path);
+            Debug.LogError("[ShinCore] Can't load style: " + path);
             return;
         }
         set.Add(asset);
@@ -72,7 +72,7 @@ internal class UIElementsEditorUtility {
 //----------------------------------------------------------------------------------------------------------------------
 	
 	//Support Toggle, FloatField, etc
-	internal static F AddField<F,V>(VisualElement parent, GUIContent content,
+	public static F AddField<F,V>(VisualElement parent, GUIContent content,
 		V initialValue, Action<ChangeEvent<V>> onValueChanged) where F: VisualElement,INotifyValueChanged<V>, new()  
 	{
 		TemplateContainer templateInstance = CloneFieldTemplate();
