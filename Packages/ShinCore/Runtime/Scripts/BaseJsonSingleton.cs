@@ -19,7 +19,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
 
     internal static T GetOrCreateInstance() {
 
-        lock (m_lock) {
+        lock (LOCK) {
             if (null != m_instance) {
                 return m_instance;
             }
@@ -29,7 +29,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
         JsonAttribute attr = (JsonAttribute) Attribute.GetCustomAttribute(typeof(T), typeof (JsonAttribute));
         m_jsonPath = (null == attr) ? typeof(T) + ".json" : attr.GetPath();
         
-        lock (m_lock) {
+        lock (LOCK) {
             
 #if UNITY_EDITOR
             m_instance = DeserializeFromFile(m_jsonPath);
@@ -76,7 +76,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
     
     private static void SaveInstanceInEditor() {
 #if UNITY_EDITOR
-        lock (m_lock) {
+        lock (LOCK) {
             Assert.IsNotNull(m_jsonPath);
             string dir = Path.GetDirectoryName(m_jsonPath);
             if (!string.IsNullOrEmpty(dir)) {
@@ -91,7 +91,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
     }
 
     internal static void Close() {
-        lock (m_lock) {
+        lock (LOCK) {
             if (null != m_instance) {
                 SaveInstanceInEditor();
             }
@@ -136,7 +136,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     // ReSharper disable once StaticMemberInGenericType
-    private static readonly object m_lock = new object();
+    private static readonly object LOCK = new object();
 
     // ReSharper disable once StaticMemberInGenericType
     private static string m_jsonPath = null;
