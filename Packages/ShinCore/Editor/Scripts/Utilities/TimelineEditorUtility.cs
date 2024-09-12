@@ -119,8 +119,7 @@ internal static class TimelineEditorUtility {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     //TimelineEditor.Refresh() has been optimized in 1.5.0 above, so WindowNeedsRedraw is enough by default. 
-    const RefreshReason DEFAULT_REFRESH_REASON = 
-        RefreshReason.WindowNeedsRedraw;
+    const RefreshReason DEFAULT_REFRESH_REASON = RefreshReason.WindowNeedsRedraw;
 
 
 }

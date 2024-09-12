@@ -23,17 +23,17 @@ internal static class LayoutUtility {
 
 //---------------------------------------------------------------------------------------------------------------------
 
-	private static Type WINDOW_LAYOUT_TYPE = Type.GetType("UnityEditor.WindowLayout,UnityEditor");
+	private static readonly Type WINDOW_LAYOUT_TYPE = Type.GetType("UnityEditor.WindowLayout,UnityEditor");
 
 #if UNITY_2023_1_OR_NEWER
-	internal static MethodInfo LOAD_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("TryLoadWindowLayout", 
+	internal static readonly MethodInfo LOAD_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("TryLoadWindowLayout", 
         BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(string), typeof(bool) }, null);
 #else
-	internal static MethodInfo LOAD_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("LoadWindowLayout", 
+	internal static readonly MethodInfo LOAD_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("LoadWindowLayout", 
         BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(string), typeof(bool) }, null);
 #endif
 	
-	internal static MethodInfo SAVE_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("SaveWindowLayout", 
+	internal static readonly MethodInfo SAVE_WINDOW_LAYOUT_METHOD = WINDOW_LAYOUT_TYPE.GetMethod("SaveWindowLayout", 
         BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(string) }, null);
 
 }
