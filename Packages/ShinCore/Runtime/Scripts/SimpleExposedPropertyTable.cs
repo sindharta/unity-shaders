@@ -36,7 +36,7 @@ internal class SimpleExposedPropertyTable : MonoBehaviour, IExposedPropertyTable
     }
     #endregion
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     internal void Add(List<PropertyName> propNames, List<Object> objects) {
         int numData = propNames.Count;
@@ -46,7 +46,7 @@ internal class SimpleExposedPropertyTable : MonoBehaviour, IExposedPropertyTable
         }
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     [SerializeField] private SerializedDictionary<PropertyName, Object>  m_referenceMap = new SerializedDictionary<PropertyName, Object>();
     

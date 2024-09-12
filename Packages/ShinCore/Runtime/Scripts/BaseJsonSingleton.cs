@@ -99,7 +99,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
         }
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal string GetJsonPath() => m_jsonPath;
 
@@ -110,7 +110,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
 
     protected abstract void UpgradeToLatestVersionV(int prevVersion, int curVersion);
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     internal void SaveInEditor() {
         SaveInstanceInEditor();
@@ -133,7 +133,7 @@ internal abstract class BaseJsonSingleton<T> : ISerializationCallbackReceiver
         m_version = latestVersion;
     }    
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     // ReSharper disable once StaticMemberInGenericType
     private static readonly object m_lock = new object();

@@ -52,7 +52,7 @@ internal static class TimelineUtility {
         return clipAssets;
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Only returns one clip if found. Does not support blended clips.
     internal static void GetActiveTimelineClipInto<T>( IEnumerable<TimelineClip> sortedClips, double directorTime, 
         out TimelineClip outClip, out T outAsset) where T: PlayableAsset 

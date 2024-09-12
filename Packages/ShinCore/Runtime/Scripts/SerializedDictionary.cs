@@ -33,7 +33,7 @@ internal class SerializedDictionary<K,V> : Dictionary<K,V>, ISerializationCallba
         }        
     }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
         
     [SerializeField] private List<K> m_keys = new List<K>();
     [SerializeField] private List<V> m_values = new List<V>();

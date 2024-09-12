@@ -31,7 +31,7 @@ public static class UIElementsEditorUtility {
         return asset;
     }    
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     /// <summary>
     /// Load UIElement style file and adds it to StyleSheetSet
@@ -49,7 +49,7 @@ public static class UIElementsEditorUtility {
         set.Add(asset);
     }
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     internal static PopupField<T> AddPopupField<T>(VisualElement parent, GUIContent content,
     	List<T> options, T defaultValue, Action<ChangeEvent<T>> onValueChanged) 
     {
@@ -69,7 +69,7 @@ public static class UIElementsEditorUtility {
     	return popupField;
     }
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	//Support Toggle, FloatField, etc
 	public static F AddField<F,V>(VisualElement parent, GUIContent content,
@@ -101,7 +101,7 @@ public static class UIElementsEditorUtility {
 		return field;
 	}	
 	
-//----------------------------------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	private static TemplateContainer CloneFieldTemplate() {
 		if (null == m_fieldTemplate) {
@@ -111,7 +111,7 @@ public static class UIElementsEditorUtility {
 		return m_fieldTemplate.CloneTree();
 	}
 	
-//----------------------------------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------	
 
 	private static readonly string FIELD_TEMPLATE_PATH = Path.Combine(ShinCoreEditorConstants.PACKAGE_PATH,"Editor/UIElements/FieldTemplate");
 	private static VisualTreeAsset m_fieldTemplate = null;
