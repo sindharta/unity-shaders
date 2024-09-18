@@ -35,21 +35,13 @@ public static class RenderTextureToFile {
     }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------    
-
-    [MenuItem(SAVE_RT_TO_RGB32, true)]
-    private static bool ValidateSaveRT_RGB32() {
-        return IsRenderTextureSelected();
-    }
-
-    [MenuItem(SAVE_RT_TO_HDR, true)]
-    private static bool ValidateSaveRT_HDR() {
-        return IsRenderTextureSelected();
-    }
     
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
+    [MenuItem(SAVE_RT_TO_HDR, true)]
+    [MenuItem(SAVE_RT_TO_RGB32, true)]
     private static bool IsRenderTextureSelected() {
         return Selection.activeObject is RenderTexture;
     }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     private const string SAVE_RT_TO_RGB32 = "Assets/ShinCore/To RGB32";
     private const string SAVE_RT_TO_HDR = "Assets/ShinCore/To HDR";
