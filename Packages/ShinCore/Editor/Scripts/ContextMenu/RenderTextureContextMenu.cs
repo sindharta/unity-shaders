@@ -26,12 +26,13 @@ public static class RenderTextureToFile {
         if (rt == null)
             return;
 
-        string path = EditorUtility.SaveFilePanel("Save RenderTexture...", Application.dataPath, rt.name, "png");
+        string path = EditorUtility.SaveFilePanel("Save RenderTexture...", Application.dataPath, rt.name, "exr");
 
         if (string.IsNullOrEmpty(path))
             return;
         
         rt.WriteToFile(path, TextureFormat.RGBAFloat, isPNG:false);
+        
     }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------    
