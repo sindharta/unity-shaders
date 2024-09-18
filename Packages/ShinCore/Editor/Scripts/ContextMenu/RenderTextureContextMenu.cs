@@ -44,7 +44,7 @@ public static class RenderTextureToFile {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
     private const string SAVE_RT_TO_RGB32 = "Assets/ShinCore/To RGB32";
-    private const string SAVE_RT_TO_HDR = "Assets/ShinCore/To HDR";
+    private const string SAVE_RT_TO_HDR   = "Assets/ShinCore/To HDR";
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     private enum RenderTextureContextPriority {
