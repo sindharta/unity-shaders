@@ -6,12 +6,12 @@ namespace Shin.Core.Editor {
 
 public static class RenderTextureToFile {
 
-    [MenuItem(SAVE_RT_TO_RGB32)]
+    [MenuItem(SAVE_RT_TO_RGB32, false,  (int) RenderTextureContextPriority.ToRGB32)]
     private static void SaveRT_RGB32() {
         OpenFilePanelAndSaveRT((RenderTexture)Selection.activeObject, "png", TextureFormat.RGBA32, true);
     }
 
-    [MenuItem(SAVE_RT_TO_HDR)]
+    [MenuItem(SAVE_RT_TO_HDR, false,  (int) RenderTextureContextPriority.ToHDR)]
     private static void SaveRT_HDR() {
         OpenFilePanelAndSaveRT((RenderTexture)Selection.activeObject, "exr", TextureFormat.RGBAFloat, false);
     }
@@ -53,6 +53,12 @@ public static class RenderTextureToFile {
 
     private const string SAVE_RT_TO_RGB32 = "Assets/ShinCore/To RGB32";
     private const string SAVE_RT_TO_HDR = "Assets/ShinCore/To HDR";
+    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    private enum RenderTextureContextPriority {
+        ToRGB32 = 1000,
+        ToHDR
+    }
 
 }
 
