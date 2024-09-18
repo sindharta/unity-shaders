@@ -8,31 +8,30 @@ public static class RenderTextureToFile {
 
     [MenuItem(SAVE_RT_TO_RGB32)]
     private static void SaveRT_RGB32() {
-        RenderTexture rt = (RenderTexture)Selection.activeObject;
-        if (rt == null)
-            return;
-
-        string path = EditorUtility.SaveFilePanel("Save RenderTexture...", Application.dataPath, rt.name, "png");
-
-        if (string.IsNullOrEmpty(path))
-            return;
-        
-        rt.WriteToFile(path, TextureFormat.RGBA32, isPNG:true);
+        OpenFilePanelAndSaveRT((RenderTexture)Selection.activeObject, "png", TextureFormat.RGBA32, true);
     }
 
     [MenuItem(SAVE_RT_TO_HDR)]
     private static void SaveRT_HDR() {
-        RenderTexture rt = (RenderTexture)Selection.activeObject;
+        OpenFilePanelAndSaveRT((RenderTexture)Selection.activeObject, "exr", TextureFormat.RGBAFloat, false);
+    }
+
+    private static void OpenFilePanelAndSaveRT(RenderTexture rt, string ext, TextureFormat texFormat, bool isPNG) {
         if (rt == null)
             return;
 
-        string path = EditorUtility.SaveFilePanel("Save RenderTexture...", Application.dataPath, rt.name, "exr");
+        string path = EditorUtility.SaveFilePanel("Save RenderTexture...", Application.dataPath, rt.name, ext);
 
         if (string.IsNullOrEmpty(path))
             return;
         
-        rt.WriteToFile(path, TextureFormat.RGBAFloat, isPNG:false);
-        
+        rt.WriteToFile(path, texFormat, isPNG);
+
+        string normalizedPath = AssetEditorUtility.NormalizePath(path);
+        if (AssetUtility.IsAssetPath(normalizedPath, out _)) {
+            AssetDatabase.Refresh();
+            AssetEditorUtility.PingAssetByPath(normalizedPath);
+        }
     }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------    
