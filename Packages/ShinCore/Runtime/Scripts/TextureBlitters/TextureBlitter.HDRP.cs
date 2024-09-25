@@ -28,18 +28,14 @@ internal partial class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     void OnEndFrameRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera[] cams) {
         
-        if (null == GetSrcTexture())
-            return;
-        
         //only blit for specified camera type
         foreach (Camera cam in cams) {
             if (cam.cameraType != m_targetCameraType)
                 return;
         }
         
-        BlitToDest(null);
-        
-    }         
+        BlitToDest(m_destTexture);
+    }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
