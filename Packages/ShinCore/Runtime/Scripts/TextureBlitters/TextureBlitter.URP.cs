@@ -26,9 +26,9 @@ internal partial class TextureBlitter : MonoBehaviour {
         if (cam != m_camera) return;
         
         if (m_outputToDisplay)
-            ExecuteBlit(m_srcTexture, dest:null, m_destTexture);
+            ExecuteBlit(m_srcTexture, primaryDest:null, m_destTexture);
         else
-            ExecuteBlit(m_srcTexture, dest:m_destTexture);
+            ExecuteBlit(m_srcTexture, primaryDest:m_destTexture);
     } 
 }
 
