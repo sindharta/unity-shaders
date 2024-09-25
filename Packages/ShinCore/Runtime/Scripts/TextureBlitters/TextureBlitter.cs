@@ -13,14 +13,14 @@ internal partial class TextureBlitter : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void BlitToDest(RenderTexture destination) {
+    private void BlitToDest(Texture src, RenderTexture destination) {
 
         if (null == m_blitMaterial) {
-            Graphics.Blit(m_srcTexture, destination);
+            Graphics.Blit(src, destination);
             return;
         }
         
-        Graphics.Blit(m_srcTexture, destination, m_blitMaterial);
+        Graphics.Blit(src, destination, m_blitMaterial);
         
     }
 
@@ -34,8 +34,8 @@ internal partial class TextureBlitter : MonoBehaviour {
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    [SerializeField] private Texture       m_srcTexture;
-    [SerializeField] private RenderTexture m_destTexture; //if null, blits to screen
+    [HideInInspector][SerializeField] private Texture       m_srcTexture;
+    [SerializeField]                  private RenderTexture m_destTexture; //if null, blits to screen
     
     [SerializeField] Material m_blitMaterial = null;
     
