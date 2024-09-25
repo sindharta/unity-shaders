@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Shin.Core {
 
 [ExecuteAlways]
-internal partial class TextureBlitter {
+internal partial class TextureBlitter : MonoBehaviour {
     
     private void AwakeInternal() { }
     
