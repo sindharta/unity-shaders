@@ -34,7 +34,10 @@ internal partial class TextureBlitter : MonoBehaviour {
                 return;
         }
         
-        BlitToDest(null, m_destTexture);
+        BlitToDest(null, null);
+        if (null != m_destTexture)
+            BlitToDest(null, m_destTexture);
+
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------

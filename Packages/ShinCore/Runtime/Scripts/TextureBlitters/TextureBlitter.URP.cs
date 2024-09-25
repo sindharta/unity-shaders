@@ -23,9 +23,11 @@ internal partial class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnEndCameraRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera cam) {
-        if (cam == m_camera) {
+        if (cam != m_camera) return;
+        
+        BlitToDest(null, null);
+        if (null != m_destTexture)
             BlitToDest(null, m_destTexture);
-        }
     } 
 }
 
