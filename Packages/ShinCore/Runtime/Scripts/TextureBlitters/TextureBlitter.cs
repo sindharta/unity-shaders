@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 namespace Shin.Core {
 
 [RequireComponent(typeof(Camera))]
-internal abstract class TextureBlitter : MonoBehaviour {
+internal partial class TextureBlitter : MonoBehaviour {
     
     void Awake() {
         m_camera = GetComponent<Camera>();
@@ -13,14 +13,12 @@ internal abstract class TextureBlitter : MonoBehaviour {
         m_camera.clearFlags  = CameraClearFlags.Depth;
         m_camera.cullingMask = 0;
 
-        AwakeInternalV();
+        AwakeInternal();
     }
 
-    protected abstract void AwakeInternalV();
-    
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    protected void BlitToDest(RenderTexture destination) {
+    private void BlitToDest(RenderTexture destination) {
         if (null == m_srcTexture) 
             return;
 
@@ -36,12 +34,9 @@ internal abstract class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal void SetSrcTexture(Texture tex) { m_srcTexture = tex; }
-    protected Texture GetSrcTexture() { return m_srcTexture; }
     
     internal void SetBlitMaterial(Material blitMat) { m_blitMaterial = blitMat; }
     internal void SetCameraDepth(int depth) { m_camera.depth = depth; }
-
-    protected Camera GetCamera() { return m_camera; }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 

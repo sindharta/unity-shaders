@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Shin.Core {
 
 [ExecuteAlways]
-internal class URPTextureBlitter : TextureBlitter {
+internal partial class TextureBlitter {
     
-    protected override void AwakeInternalV() { }
+    private void AwakeInternal() { }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -23,7 +23,7 @@ internal class URPTextureBlitter : TextureBlitter {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnEndCameraRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera cam) {
-        if (cam == GetCamera() && null != GetSrcTexture()) {
+        if (cam == m_camera && null != m_srcTexture) {
             BlitToDest(null);
         }
     } 
