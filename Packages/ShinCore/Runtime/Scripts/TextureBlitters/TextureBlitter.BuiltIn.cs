@@ -1,15 +1,13 @@
 ﻿#if !SHIN_CORE_USE_URP && !SHIN_CORE_USE_HDRP
 
-
 using UnityEngine;
 
 namespace Shin.Core {
 
 [ExecuteAlways]
 [RequireComponent(typeof(Camera))]
-internal class LegacyTextureBlitter : TextureBlitter {
-
-    protected override void AwakeInternalV() { }
+internal partial class TextureBlitter : MonoBehaviour {
+    private void AwakeInternal() { }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
