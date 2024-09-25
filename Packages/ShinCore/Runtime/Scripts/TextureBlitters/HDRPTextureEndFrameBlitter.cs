@@ -17,7 +17,7 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
         m_hdData.fullscreenPassthrough = true;
         
     }
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private void OnEnable() {
         UnityEngine.Rendering.RenderPipelineManager.endFrameRendering += OnEndFrameRendering;                
@@ -29,7 +29,7 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
     }
 
     
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     void OnEndFrameRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera[] cams) {
         
         if (null == GetSrcTexture())
@@ -45,11 +45,11 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
         
     }         
 
-//----------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal void SetTargetCameraType(CameraType cameraType) { m_targetCameraType = cameraType; }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     [SerializeField] private CameraType m_targetCameraType = CameraType.Game;
 
