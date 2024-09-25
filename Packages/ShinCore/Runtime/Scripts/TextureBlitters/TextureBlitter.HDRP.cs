@@ -34,7 +34,10 @@ internal partial class TextureBlitter : MonoBehaviour {
                 return;
         }
 
-        ExecuteBlit(m_srcTexture, dest:null, m_destTexture);
+        if (m_outputToDisplay)
+            ExecuteBlit(m_srcTexture, dest:null, m_destTexture);
+        else
+            ExecuteBlit(m_srcTexture, dest:m_destTexture);
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------

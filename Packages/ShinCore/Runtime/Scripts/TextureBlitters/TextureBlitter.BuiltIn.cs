@@ -12,7 +12,12 @@ internal partial class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnRenderImage(RenderTexture source, RenderTexture destination) {
-        ExecuteBlit(m_srcTexture, destination, m_destTexture);
+        if (m_outputToDisplay)
+            ExecuteBlit(m_srcTexture, destination, m_destTexture);
+        else {
+            Graphics.Blit(source,destination);
+            ExecuteBlit(m_srcTexture, m_destTexture);
+        }
     }
     
 }

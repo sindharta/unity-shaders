@@ -13,7 +13,7 @@ internal partial class TextureBlitter : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void ExecuteBlit(Texture src, RenderTexture dest, RenderTexture additionalDest) {
+    private void ExecuteBlit(Texture src, RenderTexture dest, RenderTexture additionalDest = null) {
 
         if (null == m_blitMaterial) {
             Graphics.Blit(src, dest);
@@ -34,6 +34,10 @@ internal partial class TextureBlitter : MonoBehaviour {
     
     internal void SetBlitMaterial(Material blitMat) { m_blitMaterial = blitMat; }
     internal void SetCameraDepth(int depth) { m_camera.depth = depth; }
+
+    void SetOutputToDisplay(bool outputToDisplay) {
+        m_outputToDisplay = outputToDisplay;
+    }
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,6 +45,8 @@ internal partial class TextureBlitter : MonoBehaviour {
     [SerializeField] private RenderTexture m_destTexture; //if null, blits to screen
     
     [SerializeField] Material m_blitMaterial = null;
+
+    [SerializeField] private bool m_outputToDisplay = true;
     
     private Camera m_camera;
 }
