@@ -13,16 +13,17 @@ internal partial class TextureBlitter : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void ExecuteBlit(Texture src, RenderTexture dest, RenderTexture additionalDest = null) {
+    //primaryDest: null means the output display for SRP.
+    private void ExecuteBlit(Texture src, RenderTexture primaryDest, RenderTexture additionalDest = null) {
 
         if (null == m_blitMaterial) {
-            Graphics.Blit(src, dest);
+            Graphics.Blit(src, primaryDest);
             if (null != additionalDest)
                 Graphics.Blit(src, additionalDest);
             return;
         }
         
-        Graphics.Blit(src, dest, m_blitMaterial);
+        Graphics.Blit(src, primaryDest, m_blitMaterial);
         if (null != additionalDest)
             Graphics.Blit(src, additionalDest, m_blitMaterial);
     }
