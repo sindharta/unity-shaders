@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿#if !SHIN_CORE_USE_URP && !SHIN_CORE_USE_HDRP
+
+
+using UnityEngine;
 
 namespace Shin.Core {
 
@@ -17,3 +20,5 @@ internal class LegacyTextureBlitter : TextureBlitter {
 }
 
 } //end namespace
+
+#endif //!SHIN_CORE_USE_URP && !SHIN_CORE_USE_HDRP
