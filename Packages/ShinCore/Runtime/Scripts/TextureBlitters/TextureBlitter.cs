@@ -33,7 +33,9 @@ internal partial class TextureBlitter : MonoBehaviour {
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    [FormerlySerializedAs("m_texture")] [SerializeField] private Texture  m_srcTexture;    
+    [SerializeField] private Texture       m_srcTexture;
+    [SerializeField] private RenderTexture m_destTexture; //if null, blits to screen
+    
     [SerializeField] Material m_blitMaterial = null;
     
     private Camera m_camera;
