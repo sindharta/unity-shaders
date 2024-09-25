@@ -13,15 +13,18 @@ internal partial class TextureBlitter : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void BlitToDest(Texture src, RenderTexture destination) {
+    private void ExecuteBlit(Texture src, RenderTexture dest, RenderTexture additionalDest) {
 
         if (null == m_blitMaterial) {
-            Graphics.Blit(src, destination);
+            Graphics.Blit(src, dest);
+            if (null != additionalDest)
+                Graphics.Blit(src, additionalDest);
             return;
         }
         
-        Graphics.Blit(src, destination, m_blitMaterial);
-        
+        Graphics.Blit(src, dest, m_blitMaterial);
+        if (null != additionalDest)
+            Graphics.Blit(src, additionalDest, m_blitMaterial);
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------

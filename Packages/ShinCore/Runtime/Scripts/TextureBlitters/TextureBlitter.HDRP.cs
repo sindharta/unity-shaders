@@ -33,11 +33,8 @@ internal partial class TextureBlitter : MonoBehaviour {
             if (cam.cameraType != m_targetCameraType)
                 return;
         }
-        
-        BlitToDest(m_srcTexture, null);
-        if (null != m_destTexture)
-            BlitToDest(m_srcTexture, m_destTexture);
 
+        ExecuteBlit(m_srcTexture, dest:null, m_destTexture);
     }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
