@@ -27,6 +27,7 @@ internal partial class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal void SetSrcTexture(Texture tex) { m_srcTexture = tex; }
+    internal void SetDestTexture(RenderTexture rt) { m_destTexture = rt; }
     
     internal void SetBlitMaterial(Material blitMat) { m_blitMaterial = blitMat; }
     internal void SetCameraDepth(int depth) { m_camera.depth = depth; }
