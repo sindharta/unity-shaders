@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 namespace Shin.Core {
 
 [RequireComponent(typeof(Camera))]
-internal abstract class BaseTextureBlitter : MonoBehaviour {
+internal abstract class TextureBlitter : MonoBehaviour {
     
     void Awake() {
         m_camera = GetComponent<Camera>();

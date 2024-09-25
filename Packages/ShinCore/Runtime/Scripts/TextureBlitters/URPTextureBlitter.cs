@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Shin.Core {
 
 [ExecuteAlways]
-internal class URPTextureBlitter : BaseTextureBlitter {
+internal class URPTextureBlitter : TextureBlitter {
     
     protected override void AwakeInternalV() { }
     

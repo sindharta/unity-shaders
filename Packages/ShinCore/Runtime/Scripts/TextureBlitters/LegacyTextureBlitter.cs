@@ -4,7 +4,7 @@ namespace Shin.Core {
 
 [ExecuteAlways]
 [RequireComponent(typeof(Camera))]
-internal class LegacyTextureBlitter : BaseTextureBlitter {
+internal class LegacyTextureBlitter : TextureBlitter {
 
     protected override void AwakeInternalV() { }
 
