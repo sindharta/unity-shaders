@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Unity.StreamingImageSequence {
+namespace Shin.Core {
 
 [ExecuteAlways]
 [RequireComponent(typeof(Camera))]

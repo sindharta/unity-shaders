@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Unity.StreamingImageSequence {
+namespace Shin.Core {
 
 [RequireComponent(typeof(Camera))]
 internal abstract class BaseTextureBlitter : MonoBehaviour {    

@@ -1,9 +1,9 @@
-﻿#if AT_USE_HDRP
+﻿#if SHIN_CORE_USE_HDRP
 
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 
-namespace Unity.StreamingImageSequence {
+namespace Shin.Core {
 
 [ExecuteAlways]
 [RequireComponent(typeof(Camera))]
@@ -58,4 +58,4 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
 
 } //end namespace 
 
-#endif // AT_USE_HDRP
+#endif // SHIN_CORE_USE_HDRP

@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿#if SHIN_CORE_USE_URP
 
-namespace Unity.StreamingImageSequence {
+using UnityEngine;
+
+namespace Shin.Core {
 
 [ExecuteAlways]
 internal class URPTextureBlitter : BaseTextureBlitter {    
@@ -32,3 +34,5 @@ internal class URPTextureBlitter : BaseTextureBlitter {
 
 
 } //end namespace
+
+#endif //SHIN_CORE_USE_URP
