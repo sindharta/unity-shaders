@@ -12,10 +12,10 @@ internal partial class TextureBlitter : MonoBehaviour {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnRenderImage(RenderTexture source, RenderTexture destination) {
-        BlitToDest(source, destination);
+        BlitToDest(m_srcTexture, destination);
         
         if (null != m_destTexture) {
-            BlitToDest(source, m_destTexture);
+            BlitToDest(m_srcTexture, m_destTexture);
         }
     }
     
