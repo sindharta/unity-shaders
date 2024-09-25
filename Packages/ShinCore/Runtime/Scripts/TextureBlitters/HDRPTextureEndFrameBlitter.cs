@@ -20,7 +20,7 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private void OnEnable() {
-        UnityEngine.Rendering.RenderPipelineManager.endFrameRendering += OnEndFrameRendering;                
+        UnityEngine.Rendering.RenderPipelineManager.endFrameRendering += OnEndFrameRendering;
     }
 
     private void OnDisable() {
@@ -38,7 +38,7 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
         //only blit for specified camera type
         foreach (Camera cam in cams) {
             if (cam.cameraType != m_targetCameraType)
-                return;            
+                return;
         }
         
         BlitToDest(null);

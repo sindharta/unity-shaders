@@ -5,11 +5,11 @@ using UnityEngine;
 namespace Shin.Core {
 
 [ExecuteAlways]
-internal class URPTextureBlitter : BaseTextureBlitter {    
+internal class URPTextureBlitter : BaseTextureBlitter {
     
     protected override void AwakeInternalV() { }
     
-//---------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     private void OnEnable() {
         UnityEngine.Rendering.RenderPipelineManager.endCameraRendering += OnEndCameraRendering;
@@ -20,18 +20,14 @@ internal class URPTextureBlitter : BaseTextureBlitter {
         UnityEngine.Rendering.RenderPipelineManager.endCameraRendering -= OnEndCameraRendering;
     }
     
-
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnEndCameraRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera cam) {
         if (cam == GetCamera() && null != GetSrcTexture()) {
             BlitToDest(null);
         }
     } 
-        
-//---------------------------------------------------------------------------------------------------------------------- 
 }
-
 
 } //end namespace
 

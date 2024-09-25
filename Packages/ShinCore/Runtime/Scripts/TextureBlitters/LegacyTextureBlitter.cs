@@ -8,11 +8,11 @@ internal class LegacyTextureBlitter : BaseTextureBlitter {
 
     protected override void AwakeInternalV() { }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     void OnRenderImage(RenderTexture source, RenderTexture destination) {
         BlitToDest(destination);
-    }    
+    }
     
 }
 
