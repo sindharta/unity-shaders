@@ -37,8 +37,8 @@ internal partial class TextureBlitter : MonoBehaviour {
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    [HideInInspector][SerializeField] private Texture       m_srcTexture;
-    [SerializeField]                  private RenderTexture m_destTexture; //if null, blits to screen
+    [SerializeField] private Texture       m_srcTexture;
+    [SerializeField] private RenderTexture m_destTexture; //if null, blits to screen
     
     [SerializeField] Material m_blitMaterial = null;
     
