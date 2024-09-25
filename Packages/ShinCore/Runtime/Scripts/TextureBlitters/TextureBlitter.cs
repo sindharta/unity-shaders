@@ -18,7 +18,7 @@ internal abstract class TextureBlitter : MonoBehaviour {
 
     protected abstract void AwakeInternalV();
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     protected void BlitToDest(RenderTexture destination) {
         if (null == m_srcTexture) 
@@ -33,7 +33,7 @@ internal abstract class TextureBlitter : MonoBehaviour {
         
     }
 
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     internal void SetSrcTexture(Texture tex) { m_srcTexture = tex; }
     protected Texture GetSrcTexture() { return m_srcTexture; }
@@ -43,7 +43,7 @@ internal abstract class TextureBlitter : MonoBehaviour {
 
     protected Camera GetCamera() { return m_camera; }
     
-//----------------------------------------------------------------------------------------------------------------------    
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     [FormerlySerializedAs("m_texture")] [SerializeField] private Texture  m_srcTexture;    
     [SerializeField] Material m_blitMaterial = null;
