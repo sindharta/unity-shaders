@@ -8,14 +8,11 @@ namespace Shin.Core {
 [ExecuteAlways]
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(HDAdditionalCameraData))]
+internal partial class TextureBlitter : MonoBehaviour {
 
-internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
-
-
-    protected override void AwakeInternalV() {
+    private void AwakeInternal() {
         m_hdData                       = GetComponent<HDAdditionalCameraData>();
         m_hdData.fullscreenPassthrough = true;
-        
     }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -27,7 +24,6 @@ internal class HDRPTextureEndFrameBlitter : BaseTextureBlitter {
         UnityEngine.Rendering.RenderPipelineManager.endFrameRendering -= OnEndFrameRendering; 
         
     }
-
     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     void OnEndFrameRendering(UnityEngine.Rendering.ScriptableRenderContext context, Camera[] cams) {
