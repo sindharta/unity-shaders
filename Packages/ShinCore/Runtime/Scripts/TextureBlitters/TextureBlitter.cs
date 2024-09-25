@@ -8,11 +8,6 @@ internal partial class TextureBlitter : MonoBehaviour {
     
     void Awake() {
         m_camera = GetComponent<Camera>();
-        
-        //Render nothing
-        m_camera.clearFlags  = CameraClearFlags.Depth;
-        m_camera.cullingMask = 0;
-
         AwakeInternal();
     }
 
