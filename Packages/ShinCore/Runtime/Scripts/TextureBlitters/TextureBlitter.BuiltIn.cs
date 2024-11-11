@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace Shin.Core {
 
-[ExecuteAlways]
-[RequireComponent(typeof(Camera))]
 internal partial class TextureBlitter : MonoBehaviour {
     private void AwakeInternal() { }
 

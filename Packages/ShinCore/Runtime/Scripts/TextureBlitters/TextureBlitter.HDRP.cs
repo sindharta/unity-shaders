@@ -5,7 +5,6 @@ using UnityEngine.Rendering.HighDefinition;
 
 namespace Shin.Core {
 
-[ExecuteAlways]
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(HDAdditionalCameraData))]
 internal partial class TextureBlitter : MonoBehaviour {

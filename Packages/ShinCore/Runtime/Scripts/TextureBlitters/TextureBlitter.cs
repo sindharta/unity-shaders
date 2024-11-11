@@ -3,6 +3,7 @@ using UnityEngine.Serialization;
 
 namespace Shin.Core {
 
+[ExecuteAlways]
 [RequireComponent(typeof(Camera))]
 internal partial class TextureBlitter : MonoBehaviour {
     
@@ -13,18 +14,20 @@ internal partial class TextureBlitter : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //primaryDest: null means the output display for SRP.
+    //primaryDest: null means the default output display for SRP.
     private void ExecuteBlit(Texture src, RenderTexture primaryDest, RenderTexture additionalDest = null) {
+
+        bool additionalBlit = null != additionalDest; 
 
         if (null == m_blitMaterial) {
             Graphics.Blit(src, primaryDest);
-            if (null != additionalDest)
+            if (additionalBlit)
                 Graphics.Blit(src, additionalDest);
             return;
         }
         
         Graphics.Blit(src, primaryDest, m_blitMaterial);
-        if (null != additionalDest)
+        if (additionalBlit)
             Graphics.Blit(src, additionalDest, m_blitMaterial);
     }
 
