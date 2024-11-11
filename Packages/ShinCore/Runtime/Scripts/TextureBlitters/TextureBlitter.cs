@@ -48,7 +48,7 @@ internal partial class TextureBlitter : MonoBehaviour {
     [SerializeField] private Texture       m_srcTexture;
     [SerializeField] private RenderTexture m_destTexture; //if null, blits to screen
     
-    [SerializeField] Material m_blitMaterial = null;
+    [SerializeField] Material m_blitMaterial = null; //if null, blits directly 
 
     [SerializeField] private bool m_outputToDisplay = true;
     
