@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 7
+  version: 9
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -67,3 +67,4 @@ Material:
     - Color_94DFA6A6: {r: 2.037736, g: 4, b: 2.5676074, a: 1}
     - _Color: {r: 5.1345425, g: 5.1345425, b: 5.1345425, a: 0.16862746}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
