@@ -1,10 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-//This example blits the active CameraColor to a new texture.
-//It shows how to do a blit with material, and how to use the ResourceData to avoid another blit back to the active color target.
-//This example is for API demonstrative purposes. 
-
 public class DitherEffectRendererFeature : ScriptableRendererFeature {    
 
     // Here you can create passes and do the initialization of them. This is called everytime serialization happens.

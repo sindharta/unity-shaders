@@ -19,16 +19,17 @@ public class DitherEffectPass : ScriptableRenderPass {
 
         //The pass will read the current color texture. That needs to be an intermediate texture. It's not supported to use the BackBuffer as input texture. 
         //By setting this property, URP will automatically create an intermediate texture. 
-        //It's good practice to set it here and not from the RenderFeature. This way, the pass is selfcontaining and you can use it to directly enqueue the pass from a monobehaviour without a RenderFeature.
+        //It's good practice to set it here and not from the RenderFeature.
+        //This way, the pass is self containing and you can use it to directly enqueue the pass from a monobehaviour without a RenderFeature.
         requiresIntermediateTexture = true;
     }
 
     public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData) {
         VolumeStack stack = VolumeManager.instance.stack;
-            var customEffect = stack.GetComponent<SphereVolumeComponent>();
-            // Only process if the effect is active
-            if (!customEffect.IsActive())
-                return;
+        SphereVolumeComponent customEffect = stack.GetComponent<SphereVolumeComponent>();
+        // Only process if the effect is active
+        if (!customEffect.IsActive())
+            return;
 
         // UniversalResourceData contains all the texture handles used by the renderer, including the active color and depth textures
         // The active color and depth textures are the main color and depth buffers that the camera renders into
@@ -36,8 +37,7 @@ public class DitherEffectPass : ScriptableRenderPass {
 
         //This should never happen since we set m_Pass.requiresIntermediateTexture = true;
         //Unless you set the render event to AfterRendering, where we only have the BackBuffer. 
-        if (resourceData.isActiveTargetBackBuffer)
-        {
+        if (resourceData.isActiveTargetBackBuffer) {
             Debug.LogError($"Skipping render pass. DitherEffectRendererFeature requires an intermediate ColorTexture, we can't use the BackBuffer as a texture input.");
             return;
         }
