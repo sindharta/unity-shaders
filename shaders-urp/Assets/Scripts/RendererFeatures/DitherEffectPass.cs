@@ -26,7 +26,7 @@ public class DitherEffectPass : ScriptableRenderPass {
 
     public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData) {
         VolumeStack stack = VolumeManager.instance.stack;
-        SphereVolumeComponent customEffect = stack.GetComponent<SphereVolumeComponent>();
+        CustomDitherVolumeComponent customEffect = stack.GetComponent<CustomDitherVolumeComponent>();
         // Only process if the effect is active
         if (!customEffect.IsActive())
             return;
