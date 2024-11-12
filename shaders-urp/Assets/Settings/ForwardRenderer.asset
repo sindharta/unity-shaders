@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-314309698037612059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d782816b8872884fa46c86ac5d816ee, type: 3}
+  m_Name: DitherEffectRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_blitMaterial: {fileID: 2100000, guid: 90057bb3471f9af43b7530912b0bfd12, type: 2}
+  m_injectionPoint: 600
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,7 +43,8 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
   - {fileID: 5413041191544749068}
-  m_RendererFeatureMap: 0cfc94c048fc1e4b
+  - {fileID: -314309698037612059}
+  m_RendererFeatureMap: 0cfc94c048fc1e4be50102b3fe58a3fb
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
