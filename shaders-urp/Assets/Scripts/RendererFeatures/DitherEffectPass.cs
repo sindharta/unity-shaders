@@ -42,12 +42,11 @@ public class DitherEffectPass : ScriptableRenderPass {
             return;
         }
 
-        // The destination texture is created here, 
-        // the texture is created with the same dimensions as the active color texture
+        // The destination texture is created here with the same dimensions as the active color texture
         TextureHandle source = resourceData.activeColorTexture;
 
         TextureDesc destinationDesc = renderGraph.GetTextureDesc(source);
-        destinationDesc.name = $"CameraColor-{PASS_NAME}";
+        destinationDesc.name = $"DitherEffectPass-CameraColor-{PASS_NAME}";
         destinationDesc.clearBuffer = false;
 
         TextureHandle destination = renderGraph.CreateTexture(destinationDesc);
