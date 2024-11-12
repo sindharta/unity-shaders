@@ -48,6 +48,8 @@ public class DitherEffectPass : ScriptableRenderPass {
         TextureDesc destinationDesc = renderGraph.GetTextureDesc(source);
         destinationDesc.name = $"DitherEffectPass-CameraColor-{PASS_NAME}";
         destinationDesc.clearBuffer = false;
+//        destinationDesc.msaaSamples = QualitySettings.antiAliasing == 0 ? MSAASamples.None : MSAASamples.MSAA2x;
+        destinationDesc.msaaSamples = MSAASamples.None;   
 
         TextureHandle destination = renderGraph.CreateTexture(destinationDesc);
 
