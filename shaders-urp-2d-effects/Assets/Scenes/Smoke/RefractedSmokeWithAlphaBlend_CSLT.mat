@@ -65,7 +65,7 @@ Material:
     - Refraction_Blend_Amount: 0.104
     - Refraction_Noise_Scale: 11.2
     - Refraction_Scale: 1.1
-    - Smoke_Color_Thickness: 3.35
+    - Smoke_Color_Thickness: 4.41
     - Vector1_5818732132b9477ea85d2f6182364b90: -0.1
     - _Smoke_Detail_Alpha_Weight: 1
     m_Colors:
