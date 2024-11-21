@@ -82,9 +82,6 @@
             "m_Id": "a3bd025e61fc4a4bb16ff2f667581470"
         },
         {
-            "m_Id": "72d6964f55b348a2a0240bc45ffb3fa2"
-        },
-        {
             "m_Id": "395bfc8434b2495da0d7d5689630e06a"
         },
         {
@@ -225,6 +222,20 @@
             },
             "m_InputSlot": {
                 "m_Node": {
+                    "m_Id": "395bfc8434b2495da0d7d5689630e06a"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "4cbf3b379b88403e8274bc970ad8edfb"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
                     "m_Id": "a721ace438774c8db978fbe126535f6b"
                 },
                 "m_SlotId": -1249712552
@@ -310,20 +321,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "d76271315f604e3092831142e6be4c35"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "72d6964f55b348a2a0240bc45ffb3fa2"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "395bfc8434b2495da0d7d5689630e06a"
                 },
                 "m_SlotId": 1
             }
@@ -1203,8 +1200,8 @@
     "m_ObjectId": "2ba84bf8fbe2455499a83f63e983c568",
     "m_Title": "Get Camera Size",
     "m_Position": {
-        "x": -6915.33349609375,
-        "y": 752.6666259765625
+        "x": -6998.39990234375,
+        "y": 878.4000854492188
     }
 }
 
@@ -1446,10 +1443,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -6687.33349609375,
-            "y": 868.0,
-            "width": 106.0,
-            "height": 36.0
+            "x": -6783.2001953125,
+            "y": 985.5999755859375,
+            "width": 105.60009765625,
+            "height": 33.60009765625
         }
     },
     "m_Slots": [
@@ -1855,10 +1852,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -6890.0,
-            "y": 811.3333129882813,
-            "width": 123.33349609375,
-            "height": 246.66668701171876
+            "x": -6972.7998046875,
+            "y": 938.4000244140625,
+            "width": 121.599609375,
+            "height": 244.800048828125
         }
     },
     "m_Slots": [
@@ -2121,42 +2118,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "72d6964f55b348a2a0240bc45ffb3fa2",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -6529.33349609375,
-            "y": 940.0,
-            "width": 106.0,
-            "height": 36.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "7993803a6fb143a397885cd211100c98"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "dcb6661f9f114999a8a01266923c698b"
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.NormalMaterialSlot",
     "m_ObjectId": "72f16be464224df5adc99d2a1e5d5075",
     "m_Id": 0,
@@ -2263,21 +2224,6 @@
         "e32": 0.0,
         "e33": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "7993803a6fb143a397885cd211100c98",
-    "m_Id": 0,
-    "m_DisplayName": "Zoom",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
 }
 
 {
@@ -2852,7 +2798,7 @@
     ],
     "synonyms": [],
     "m_Precision": 0,
-    "m_PreviewExpanded": false,
+    "m_PreviewExpanded": true,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
