@@ -134,6 +134,9 @@
         },
         {
             "m_Id": "323254eb1ff44b81b63f8abee7eafdcb"
+        },
+        {
+            "m_Id": "e675a605c48640c7a36c5e542621e518"
         }
     ],
     "m_GroupDatas": [
@@ -585,6 +588,20 @@
                     "m_Id": "3049afd5ac5a4617a8aec9ab203343a6"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "e675a605c48640c7a36c5e542621e518"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "a42340f85ae64b67be40717821e03506"
+                },
+                "m_SlotId": 3
             }
         },
         {
@@ -4180,6 +4197,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.SamplerStateNode",
+    "m_ObjectId": "e675a605c48640c7a36c5e542621e518",
+    "m_Group": {
+        "m_Id": "1df920424b7244cd985d73baaba52a90"
+    },
+    "m_Name": "Sampler State",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -645.599853515625,
+            "y": 428.8000183105469,
+            "width": 145.59994506835938,
+            "height": 135.20004272460938
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "fbcdf4ef082940a983df1bd9260a1753"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_filter": 0,
+    "m_wrap": 0,
+    "m_aniso": 0
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "e7df496a7c6db581aa661d77bbb1bc11",
     "m_Id": 2,
@@ -4506,6 +4559,19 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.SamplerStateMaterialSlot",
+    "m_ObjectId": "fbcdf4ef082940a983df1bd9260a1753",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_BareResource": false
 }
 
 {
